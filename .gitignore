@@ -6,13 +6,14 @@ software/data/
 # Broken placeholder from the previous invalid git directory
 .git_broken_empty/
 
-# HLS generated intermediate databases and build outputs
-report/hls_baseline/solution1/.autopilot/
-report/hls_baseline/solution1/.debug/
-report/hls_baseline/solution1/.tcls/
-report/hls_baseline/solution1/csim/build/
-report/hls_baseline/solution1/impl/
-report/hls_baseline/solution1/syn/vhdl/
+# HLS generated intermediate databases and build outputs.
+# Keep csim logs, synthesis reports, and synthesized Verilog for report evidence.
+report/hls_baseline/solution*/.autopilot/
+report/hls_baseline/solution*/.debug/
+report/hls_baseline/solution*/.tcls/
+report/hls_baseline/solution*/csim/build/
+report/hls_baseline/solution*/impl/
+report/hls_baseline/solution*/syn/vhdl/
 
 # Native build outputs
 *.exe

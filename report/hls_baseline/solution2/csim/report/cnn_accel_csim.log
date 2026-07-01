@@ -1,0 +1,80 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../mnist_fpga_cnn/hls/tb_cnn.cpp in debug mode
+   Compiling ../../../../mnist_fpga_cnn/hls/cnn_accel.cpp in debug mode
+   Generating csim.exe
+image 0 conv1 PASS
+image 0 pool1 PASS
+image 0 conv2 PASS
+image 0 pool2 PASS
+image 0 fc1 PASS
+image 0 fc2_logits PASS
+image 0 top pred=7 golden_pred=7 label=7 quant_match=PASS label_match=PASS
+image 1 conv1 PASS
+image 1 pool1 PASS
+image 1 conv2 PASS
+image 1 pool2 PASS
+image 1 fc1 PASS
+image 1 fc2_logits PASS
+image 1 top pred=2 golden_pred=2 label=2 quant_match=PASS label_match=PASS
+image 2 conv1 PASS
+image 2 pool1 PASS
+image 2 conv2 PASS
+image 2 pool2 PASS
+image 2 fc1 PASS
+image 2 fc2_logits PASS
+image 2 top pred=1 golden_pred=1 label=1 quant_match=PASS label_match=PASS
+image 3 conv1 PASS
+image 3 pool1 PASS
+image 3 conv2 PASS
+image 3 pool2 PASS
+image 3 fc1 PASS
+image 3 fc2_logits PASS
+image 3 top pred=0 golden_pred=0 label=0 quant_match=PASS label_match=PASS
+image 4 conv1 PASS
+image 4 pool1 PASS
+image 4 conv2 PASS
+image 4 pool2 PASS
+image 4 fc1 PASS
+image 4 fc2_logits PASS
+image 4 top pred=4 golden_pred=4 label=4 quant_match=PASS label_match=PASS
+image 5 conv1 PASS
+image 5 pool1 PASS
+image 5 conv2 PASS
+image 5 pool2 PASS
+image 5 fc1 PASS
+image 5 fc2_logits PASS
+image 5 top pred=1 golden_pred=1 label=1 quant_match=PASS label_match=PASS
+image 6 conv1 PASS
+image 6 pool1 PASS
+image 6 conv2 PASS
+image 6 pool2 PASS
+image 6 fc1 PASS
+image 6 fc2_logits PASS
+image 6 top pred=4 golden_pred=4 label=4 quant_match=PASS label_match=PASS
+image 7 conv1 PASS
+image 7 pool1 PASS
+image 7 conv2 PASS
+image 7 pool2 PASS
+image 7 fc1 PASS
+image 7 fc2_logits PASS
+image 7 top pred=9 golden_pred=9 label=9 quant_match=PASS label_match=PASS
+image 8 conv1 PASS
+image 8 pool1 PASS
+image 8 conv2 PASS
+image 8 pool2 PASS
+image 8 fc1 PASS
+image 8 fc2_logits PASS
+image 8 top pred=5 golden_pred=5 label=5 quant_match=PASS label_match=PASS
+image 9 conv1 PASS
+image 9 pool1 PASS
+image 9 conv2 PASS
+image 9 pool2 PASS
+image 9 fc1 PASS
+image 9 fc2_logits PASS
+image 9 top pred=9 golden_pred=9 label=9 quant_match=PASS label_match=PASS
+layer matched 10 / 10
+matched quantized model 10 / 10
+matched true labels 10 / 10
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

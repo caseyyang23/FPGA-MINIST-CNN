@@ -22,9 +22,6 @@ void conv1_layer(
     const qint8_t image[MNIST_PIXELS],
     qint8_t conv1[C1_OUT][IMG_H][IMG_W]
 ) {
-#pragma HLS ARRAY_PARTITION variable=W_CONV1 complete dim=3
-#pragma HLS ARRAY_PARTITION variable=W_CONV1 complete dim=4
-
 conv1_loop:
     for (int oc = 0; oc < C1_OUT; ++oc) {
         for (int y = 0; y < IMG_H; ++y) {
@@ -32,9 +29,7 @@ conv1_loop:
 #pragma HLS PIPELINE II=1
                 qint32_t acc = B_CONV1[oc];
                 for (int ky = 0; ky < K; ++ky) {
-#pragma HLS UNROLL
                     for (int kx = 0; kx < K; ++kx) {
-#pragma HLS UNROLL
                         int iy = y + ky - 1;
                         int ix = x + kx - 1;
                         if (iy >= 0 && iy < IMG_H && ix >= 0 && ix < IMG_W) {
@@ -75,20 +70,15 @@ void conv2_layer(
     const qint8_t pool1[C1_OUT][P1_H][P1_W],
     qint8_t conv2[C2_OUT][P1_H][P1_W]
 ) {
-#pragma HLS ARRAY_PARTITION variable=W_CONV2 complete dim=3
-#pragma HLS ARRAY_PARTITION variable=W_CONV2 complete dim=4
-
 conv2_loop:
     for (int oc = 0; oc < C2_OUT; ++oc) {
         for (int y = 0; y < P1_H; ++y) {
             for (int x = 0; x < P1_W; ++x) {
-#pragma HLS PIPELINE II=1
                 qint32_t acc = B_CONV2[oc];
                 for (int ic = 0; ic < C1_OUT; ++ic) {
                     for (int ky = 0; ky < K; ++ky) {
-#pragma HLS UNROLL
                         for (int kx = 0; kx < K; ++kx) {
-#pragma HLS UNROLL
+#pragma HLS PIPELINE II=1
                             int iy = y + ky - 1;
                             int ix = x + kx - 1;
                             if (iy >= 0 && iy < P1_H && ix >= 0 && ix < P1_W) {
@@ -130,19 +120,17 @@ void fc1_layer(
     qint8_t fc1[FC1_OUT]
 ) {
 #pragma HLS ARRAY_PARTITION variable=fc1 complete dim=1
-#pragma HLS ARRAY_PARTITION variable=pool2 cyclic factor=4 dim=3
-#pragma HLS ARRAY_PARTITION variable=W_FC1 cyclic factor=4 dim=2
 
 fc1_loop:
     for (int o = 0; o < FC1_OUT; ++o) {
         qint32_t acc = B_FC1[o];
+        int idx = 0;
         for (int c = 0; c < C2_OUT; ++c) {
             for (int y = 0; y < P2_H; ++y) {
-#pragma HLS PIPELINE II=1
                 for (int x = 0; x < P2_W; ++x) {
-#pragma HLS UNROLL factor=4
-                    int idx = c * P2_H * P2_W + y * P2_W + x;
+#pragma HLS PIPELINE II=1
                     acc += (qint32_t)pool2[c][y][x] * W_FC1[o][idx];
+                    ++idx;
                 }
             }
         }

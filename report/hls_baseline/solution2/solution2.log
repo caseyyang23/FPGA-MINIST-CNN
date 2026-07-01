@@ -1,0 +1,643 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./hls_minst_cnn/solution2/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name cnn_accel cnn_accel 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 30.739 seconds; current allocated memory: 0.391 MB.
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 44.008 seconds; peak allocated memory: 106.156 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./hls_minst_cnn/solution2/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name cnn_accel cnn_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.26 seconds; current allocated memory: 106.426 MB.
+INFO: [HLS 200-10] Analyzing design file 'mnist_fpga_cnn/hls/cnn_accel.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 17.761 seconds; current allocated memory: 107.844 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'ssdm_int<8, true>::ssdm_int(signed char)' into 'ap_int_base<8, true>::ap_int_base(int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::ap_int_base(int)' into 'ap_int<8>::ap_int(int)'
+INFO: [HLS 214-131] Inlining function 'ssdm_int<32, true>::ssdm_int(int)' into 'ap_int_base<32, true>::ap_int_base(int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base(int)' into 'ap_int<32>::ap_int(int)'
+INFO: [HLS 214-131] Inlining function 'ssdm_int<32, true>::ssdm_int(int)' into 'ap_int_base<32, true>::ap_int_base<8, true>(ap_int_base<8, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base<8, true>(ap_int_base<8, true> const&)' into 'ap_int<32>::ap_int<8>(ap_int<8> const&)'
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi40ELb1EEC2EDq40_i' into 'ap_int_base<40, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi40ELb1EEC2EDq40_i' into 'ap_int_base<40, true>::ap_int_base<8, true>(ap_int_base<8, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi40ELb1EEC2EDq40_i' into 'ap_int_base<40, true>::ap_int_base(int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<40, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)' into 'ap_int_base<32, true>::RType<8, true>::mult operator*<32, true, 8, true>(ap_int_base<32, true> const&, ap_int_base<8, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1494:339)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<40, true>::ap_int_base(int)' into 'ap_int_base<32, true>::RType<8, true>::mult operator*<32, true, 8, true>(ap_int_base<32, true> const&, ap_int_base<8, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1494:516)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<40, true>::ap_int_base<8, true>(ap_int_base<8, true> const&)' into 'ap_int_base<32, true>::RType<8, true>::mult operator*<32, true, 8, true>(ap_int_base<32, true> const&, ap_int_base<8, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1494:427)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base(int)' into 'bool operator<=<32, true>(ap_int_base<32, true> const&, int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1788:1473)
+INFO: [HLS 214-131] Inlining function 'bool ap_int_base<32, true>::operator<=<32, true>(ap_int_base<32, true> const&) const' into 'bool operator<=<32, true>(ap_int_base<32, true> const&, int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1788:1470)
+INFO: [HLS 214-131] Inlining function 'ssdm_int<64, true>::ssdm_int(long)' into 'ap_int_base<64, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)' into 'ap_int<64>::ap_int<32>(ap_int<32> const&)'
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi96ELb1EEC2EDq96_i' into 'ap_int_base<96, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi96ELb1EEC2EDq96_i' into 'ap_int_base<96, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi96ELb1EEC2EDq96_i' into 'ap_int_base<96, true>::ap_int_base(int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<96, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)' into 'ap_int_base<64, true>::RType<32, true>::mult operator*<64, true, 32, true>(ap_int_base<64, true> const&, ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1494:339)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<96, true>::ap_int_base(int)' into 'ap_int_base<64, true>::RType<32, true>::mult operator*<64, true, 32, true>(ap_int_base<64, true> const&, ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1494:516)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<96, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)' into 'ap_int_base<64, true>::RType<32, true>::mult operator*<64, true, 32, true>(ap_int_base<64, true> const&, ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1494:427)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base(int)' into 'ap_int_base<64, true>::RType<($_0)32, true>::mult operator*<64, true>(ap_int_base<64, true> const&, int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1633:483)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::RType<32, true>::mult operator*<64, true, 32, true>(ap_int_base<64, true> const&, ap_int_base<32, true> const&)' into 'ap_int_base<64, true>::RType<($_0)32, true>::mult operator*<64, true>(ap_int_base<64, true> const&, int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1633:481)
+INFO: [HLS 214-131] Inlining function 'ssdm_int<64, true>::ssdm_int(long)' into 'ap_int_base<64, true>::ap_int_base<96, true>(ap_int_base<96, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::ap_int_base<96, true>(ap_int_base<96, true> const&)' into 'ap_int<64>::ap_int<96>(ap_int<96> const&)'
+INFO: [HLS 214-131] Inlining function 'ssdm_int<64, true>::ssdm_int(long)' into 'ap_int_base<64, true>::ap_int_base(int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::ap_int_base(int)' into 'ap_int<64>::ap_int(int)'
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::ap_int_base(int)' into 'ap_int_base<64, true>::RType<64, true>::arg1 operator<<<64, true>(ap_int_base<64, true> const&, int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1669:228)
+INFO: [HLS 214-131] Inlining function 'ssdm_int<32, false>::ssdm_int(unsigned int)' into 'ap_int_base<32, false>::ap_int_base<32, true>(ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi1ELb0EEC2EDq1_j' into 'ap_int_base<1, false>::ap_int_base(int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi33ELb1EEC2EDq33_i' into 'ap_int_base<33, true>::ap_int_base<1, false>(ap_int_base<1, false> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi33ELb1EEC2EDq33_i' into 'ap_int_base<33, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi33ELb1EEC2EDq33_i' into 'ap_int_base<33, true>::ap_int_base(int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<33, true>::ap_int_base<1, false>(ap_int_base<1, false> const&)' into 'ap_int_base<1, false>::RType<32, true>::minus operator-<1, false, 32, true>(ap_int_base<1, false> const&, ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:341)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<33, true>::ap_int_base(int)' into 'ap_int_base<1, false>::RType<32, true>::minus operator-<1, false, 32, true>(ap_int_base<1, false> const&, ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:520)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<33, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)' into 'ap_int_base<1, false>::RType<32, true>::minus operator-<1, false, 32, true>(ap_int_base<1, false> const&, ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::ap_int_base(int)' into 'ap_int_base<32, true>::operator-() const' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:895:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::RType<32, true>::minus operator-<1, false, 32, true>(ap_int_base<1, false> const&, ap_int_base<32, true> const&)' into 'ap_int_base<32, true>::operator-() const' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:895:37)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, false>::to_uint() const' into 'ap_int_base<64, true>& ap_int_base<64, true>::operator<<=<32>(ap_int_base<32, false> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:981:21)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, false>::to_uint() const' into 'ap_int_base<64, true>& ap_int_base<64, true>::operator>>=<32>(ap_int_base<32, false> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:998:21)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, false>::ap_int_base<32, true>(ap_int_base<32, true> const&)' into 'ap_int_base<64, true>& ap_int_base<64, true>::operator>>=<32>(ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:988:37)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>& ap_int_base<64, true>::operator>>=<32>(ap_int_base<32, false> const&)' into 'ap_int_base<64, true>& ap_int_base<64, true>::operator>>=<32>(ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:993:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>& ap_int_base<64, true>::operator<<=<32>(ap_int_base<32, false> const&)' into 'ap_int_base<64, true>& ap_int_base<64, true>::operator>>=<32>(ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:991:14)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, false>& ap_int_base<32, false>::operator=<33, true>(ap_int_base<33, true> const&)' into 'ap_int_base<64, true>& ap_int_base<64, true>::operator>>=<32>(ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:990:10)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::operator-() const' into 'ap_int_base<64, true>& ap_int_base<64, true>::operator>>=<32>(ap_int_base<32, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:990:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base(int)' into 'ap_int_base<64, true>& operator>>=<64, true>(ap_int_base<64, true>&, int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1727:1817)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>& ap_int_base<64, true>::operator>>=<32>(ap_int_base<32, true> const&)' into 'ap_int_base<64, true>& operator>>=<64, true>(ap_int_base<64, true>&, int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1727:1813)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base(int)' into 'bool operator><64, true>(ap_int_base<64, true> const&, int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1788:337)
+INFO: [HLS 214-131] Inlining function 'bool ap_int_base<64, true>::operator><32, true>(ap_int_base<32, true> const&) const' into 'bool operator><64, true>(ap_int_base<64, true> const&, int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1788:335)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base(int)' into 'bool operator<<64, true>(ap_int_base<64, true> const&, int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1788:713)
+INFO: [HLS 214-131] Inlining function 'bool ap_int_base<64, true>::operator<<32, true>(ap_int_base<32, true> const&) const' into 'bool operator<<64, true>(ap_int_base<64, true> const&, int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1788:711)
+INFO: [HLS 214-131] Inlining function 'ssdm_int<8, true>::ssdm_int(signed char)' into 'ap_int_base<8, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)' into 'ap_int<8>::ap_int<64>(ap_int<64> const&)'
+INFO: [HLS 214-131] Inlining function 'bool operator<=<32, true>(ap_int_base<32, true> const&, int)' into 'clamp_relu_requant(ap_int<32>, int, int)' (mnist_fpga_cnn/hls/cnn_accel.cpp:4:13)
+INFO: [HLS 214-131] Inlining function 'bool operator<<64, true>(ap_int_base<64, true> const&, int)' into 'clamp_relu_requant(ap_int<32>, int, int)' (mnist_fpga_cnn/hls/cnn_accel.cpp:15:16)
+INFO: [HLS 214-131] Inlining function 'bool operator><64, true>(ap_int_base<64, true> const&, int)' into 'clamp_relu_requant(ap_int<32>, int, int)' (mnist_fpga_cnn/hls/cnn_accel.cpp:12:16)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>& operator>>=<64, true>(ap_int_base<64, true>&, int)' into 'clamp_relu_requant(ap_int<32>, int, int)' (mnist_fpga_cnn/hls/cnn_accel.cpp:10:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>& ap_int_base<64, true>::operator+=<64, true>(ap_int_base<64, true> const&)' into 'clamp_relu_requant(ap_int<32>, int, int)' (mnist_fpga_cnn/hls/cnn_accel.cpp:9:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::RType<64, true>::arg1 operator<<<64, true>(ap_int_base<64, true> const&, int)' into 'clamp_relu_requant(ap_int<32>, int, int)' (mnist_fpga_cnn/hls/cnn_accel.cpp:9:29)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::RType<($_0)32, true>::mult operator*<64, true>(ap_int_base<64, true> const&, int)' into 'clamp_relu_requant(ap_int<32>, int, int)' (mnist_fpga_cnn/hls/cnn_accel.cpp:8:41)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::RType<8, true>::mult operator*<32, true, 8, true>(ap_int_base<32, true> const&, ap_int_base<8, true> const&)' into 'conv1_layer(ap_int<8> const*, ap_int<8> (*) [28][28])' (mnist_fpga_cnn/hls/cnn_accel.cpp:42:50)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>& ap_int_base<32, true>::operator+=<40, true>(ap_int_base<40, true> const&)' into 'conv1_layer(ap_int<8> const*, ap_int<8> (*) [28][28])' (mnist_fpga_cnn/hls/cnn_accel.cpp:42:33)
+INFO: [HLS 214-131] Inlining function 'bool ap_int_base<8, true>::operator><8, true>(ap_int_base<8, true> const&) const' into 'pool1_layer(ap_int<8> const (*) [28][28], ap_int<8> (*) [14][14])' (mnist_fpga_cnn/hls/cnn_accel.cpp:65:24)
+INFO: [HLS 214-131] Inlining function 'bool ap_int_base<8, true>::operator><8, true>(ap_int_base<8, true> const&) const' into 'pool1_layer(ap_int<8> const (*) [28][28], ap_int<8> (*) [14][14])' (mnist_fpga_cnn/hls/cnn_accel.cpp:67:24)
+INFO: [HLS 214-131] Inlining function 'bool ap_int_base<8, true>::operator><8, true>(ap_int_base<8, true> const&) const' into 'pool1_layer(ap_int<8> const (*) [28][28], ap_int<8> (*) [14][14])' (mnist_fpga_cnn/hls/cnn_accel.cpp:66:24)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::RType<8, true>::mult operator*<32, true, 8, true>(ap_int_base<32, true> const&, ap_int_base<8, true> const&)' into 'conv2_layer(ap_int<8> const (*) [14][14], ap_int<8> (*) [14][14])' (mnist_fpga_cnn/hls/cnn_accel.cpp:95:68)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>& ap_int_base<32, true>::operator+=<40, true>(ap_int_base<40, true> const&)' into 'conv2_layer(ap_int<8> const (*) [14][14], ap_int<8> (*) [14][14])' (mnist_fpga_cnn/hls/cnn_accel.cpp:95:37)
+INFO: [HLS 214-131] Inlining function 'bool ap_int_base<8, true>::operator><8, true>(ap_int_base<8, true> const&) const' into 'pool2_layer(ap_int<8> const (*) [14][14], ap_int<8> (*) [7][7])' (mnist_fpga_cnn/hls/cnn_accel.cpp:119:24)
+INFO: [HLS 214-131] Inlining function 'bool ap_int_base<8, true>::operator><8, true>(ap_int_base<8, true> const&) const' into 'pool2_layer(ap_int<8> const (*) [14][14], ap_int<8> (*) [7][7])' (mnist_fpga_cnn/hls/cnn_accel.cpp:121:24)
+INFO: [HLS 214-131] Inlining function 'bool ap_int_base<8, true>::operator><8, true>(ap_int_base<8, true> const&) const' into 'pool2_layer(ap_int<8> const (*) [14][14], ap_int<8> (*) [7][7])' (mnist_fpga_cnn/hls/cnn_accel.cpp:120:24)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::RType<8, true>::mult operator*<32, true, 8, true>(ap_int_base<32, true> const&, ap_int_base<8, true> const&)' into 'fc1_layer(ap_int<8> const (*) [7][7], ap_int<8>*)' (mnist_fpga_cnn/hls/cnn_accel.cpp:145:53)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>& ap_int_base<32, true>::operator+=<40, true>(ap_int_base<40, true> const&)' into 'fc1_layer(ap_int<8> const (*) [7][7], ap_int<8>*)' (mnist_fpga_cnn/hls/cnn_accel.cpp:145:25)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>& ap_int_base<32, true>::operator+=<40, true>(ap_int_base<40, true> const&)' into 'fc2_layer(ap_int<8> const*, ap_int<32>*)' (mnist_fpga_cnn/hls/cnn_accel.cpp:162:8)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::RType<8, true>::mult operator*<32, true, 8, true>(ap_int_base<32, true> const&, ap_int_base<8, true> const&)' into 'fc2_layer(ap_int<8> const*, ap_int<32>*)' (mnist_fpga_cnn/hls/cnn_accel.cpp:162:28)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi4ELb0EEC2EDq4_j' into 'ap_int_base<4, false>::ap_int_base(int)' (R:/Xlinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<4, false>::ap_int_base(int)' into 'ap_uint<4>::ap_uint(int)'
+INFO: [HLS 214-131] Inlining function 'bool ap_int_base<32, true>::operator><32, true>(ap_int_base<32, true> const&) const' into 'cnn_accel(ap_int<8> const*, ap_uint<4>&)' (mnist_fpga_cnn/hls/cnn_accel.cpp:194:16)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_142_3' is marked as complete unroll implied by the pipeline pragma (mnist_fpga_cnn/hls/cnn_accel.cpp:142:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_87_3' is marked as complete unroll implied by the pipeline pragma (mnist_fpga_cnn/hls/cnn_accel.cpp:87:34)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_88_4' is marked as complete unroll implied by the pipeline pragma (mnist_fpga_cnn/hls/cnn_accel.cpp:88:38)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_90_5' is marked as complete unroll implied by the pipeline pragma (mnist_fpga_cnn/hls/cnn_accel.cpp:90:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_34_3' is marked as complete unroll implied by the pipeline pragma (mnist_fpga_cnn/hls/cnn_accel.cpp:34:34)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_36_4' is marked as complete unroll implied by the pipeline pragma (mnist_fpga_cnn/hls/cnn_accel.cpp:36:19)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_142_3' (mnist_fpga_cnn/hls/cnn_accel.cpp:142:20) in function 'fc1_layer' completely with a factor of 7 (mnist_fpga_cnn/hls/cnn_accel.cpp:131:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_87_3' (mnist_fpga_cnn/hls/cnn_accel.cpp:87:34) in function 'conv2_layer' completely with a factor of 8 (mnist_fpga_cnn/hls/cnn_accel.cpp:77:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_88_4' (mnist_fpga_cnn/hls/cnn_accel.cpp:88:38) in function 'conv2_layer' completely with a factor of 3 (mnist_fpga_cnn/hls/cnn_accel.cpp:77:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_90_5' (mnist_fpga_cnn/hls/cnn_accel.cpp:90:19) in function 'conv2_layer' completely with a factor of 3 (mnist_fpga_cnn/hls/cnn_accel.cpp:77:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_34_3' (mnist_fpga_cnn/hls/cnn_accel.cpp:34:34) in function 'conv1_layer' completely with a factor of 3 (mnist_fpga_cnn/hls/cnn_accel.cpp:24:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_36_4' (mnist_fpga_cnn/hls/cnn_accel.cpp:36:19) in function 'conv1_layer' completely with a factor of 3 (mnist_fpga_cnn/hls/cnn_accel.cpp:24:0)
+INFO: [HLS 214-178] Inlining function 'clamp_relu_requant(ap_int<32>, int, int)' into 'conv1_layer(ap_int<8> const*, ap_int<8> (*) [28][28])' (mnist_fpga_cnn/hls/cnn_accel.cpp:24:0)
+INFO: [HLS 214-178] Inlining function 'clamp_relu_requant(ap_int<32>, int, int)' into 'conv2_layer(ap_int<8> const (*) [14][14], ap_int<8> (*) [14][14])' (mnist_fpga_cnn/hls/cnn_accel.cpp:77:0)
+INFO: [HLS 214-178] Inlining function 'clamp_relu_requant(ap_int<32>, int, int)' into 'fc1_layer(ap_int<8> const (*) [7][7], ap_int<8>*)' (mnist_fpga_cnn/hls/cnn_accel.cpp:131:0)
+INFO: [HLS 214-178] Inlining function 'pool1_layer(ap_int<8> const (*) [28][28], ap_int<8> (*) [14][14])' into 'cnn_accel(ap_int<8> const*, ap_uint<4>&)' (mnist_fpga_cnn/hls/cnn_accel.cpp:168:0)
+INFO: [HLS 214-178] Inlining function 'pool2_layer(ap_int<8> const (*) [14][14], ap_int<8> (*) [7][7])' into 'cnn_accel(ap_int<8> const*, ap_uint<4>&)' (mnist_fpga_cnn/hls/cnn_accel.cpp:168:0)
+INFO: [HLS 214-178] Inlining function 'fc2_layer(ap_int<8> const*, ap_int<32>*)' into 'cnn_accel(ap_int<8> const*, ap_uint<4>&)' (mnist_fpga_cnn/hls/cnn_accel.cpp:168:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL5W_FC1': Cyclic partitioning with factor 4 on dimension 2. (mnist_fpga_cnn/hls/data/weights.h:121:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL7W_CONV2': Complete partitioning on dimension 3. Complete partitioning on dimension 4. (mnist_fpga_cnn/hls/data/weights.h:47:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL7W_CONV1': Complete partitioning on dimension 3. Complete partitioning on dimension 4. (mnist_fpga_cnn/hls/data/weights.h:40:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool2': Cyclic partitioning with factor 4 on dimension 3. (mnist_fpga_cnn/hls/cnn_accel.cpp:177:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1': Complete partitioning on dimension 1. (mnist_fpga_cnn/hls/cnn_accel.cpp:178:0)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=2' for array 'cnn_accel(ap_int<8> const*, ap_uint<4>&)::conv1' due to pipeline pragma (mnist_fpga_cnn/hls/cnn_accel.cpp:60:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=2' for array 'cnn_accel(ap_int<8> const*, ap_uint<4>&)::conv2' due to pipeline pragma (mnist_fpga_cnn/hls/cnn_accel.cpp:114:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=3 dim=3' for array 'cnn_accel(ap_int<8> const*, ap_uint<4>&)::pool1' due to pipeline pragma (mnist_fpga_cnn/hls/cnn_accel.cpp:85:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=3 dim=2' for array 'cnn_accel(ap_int<8> const*, ap_uint<4>&)::pool1' due to pipeline pragma (mnist_fpga_cnn/hls/cnn_accel.cpp:85:9)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1': Cyclic partitioning with factor 3 on dimension 2. Cyclic partitioning with factor 3 on dimension 3. (mnist_fpga_cnn/hls/cnn_accel.cpp:175:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5conv2': Cyclic partitioning with factor 2 on dimension 2. (mnist_fpga_cnn/hls/cnn_accel.cpp:176:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5conv1': Cyclic partitioning with factor 2 on dimension 2. (mnist_fpga_cnn/hls/cnn_accel.cpp:174:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 15.92 seconds; current allocated memory: 110.625 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 110.691 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 0.968 seconds; current allocated memory: 133.867 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.026 seconds; current allocated memory: 147.434 MB.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV2_2_2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV2_2_1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV2_2_0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV2_1_2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV2_1_1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV2_1_0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV2_0_2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV2_0_1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV2_0_0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV1_2_2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV1_2_1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV1_2_0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV1_1_2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV1_1_1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV1_1_0' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV1_0_2' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV1_0_1' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array '_ZL7W_CONV1_0_0' in dimension 2 automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (mnist_fpga_cnn/hls/cnn_accel.cpp:3:44) to (mnist_fpga_cnn/hls/cnn_accel.cpp:149:16) in function 'fc1_layer'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (mnist_fpga_cnn/hls/cnn_accel.cpp:85:9) to (mnist_fpga_cnn/hls/cnn_accel.cpp:100:33) in function 'conv2_layer'... converting 131 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (mnist_fpga_cnn/hls/cnn_accel.cpp:33:11) to (mnist_fpga_cnn/hls/cnn_accel.cpp:46:33) in function 'conv1_layer'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'fc1_layer' (mnist_fpga_cnn/hls/cnn_accel.cpp:8:31)...7 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.984 seconds; current allocated memory: 186.582 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_139_1' (mnist_fpga_cnn/hls/cnn_accel.cpp:138:18) in function 'fc1_layer'.
+WARNING: [HLS 200-960] Cannot flatten loop 'fc1_loop' (mnist_fpga_cnn/hls/cnn_accel.cpp:137:14) in function 'fc1_layer' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_83_1' (mnist_fpga_cnn/hls/cnn_accel.cpp:83:35) in function 'conv2_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'conv2_loop' (mnist_fpga_cnn/hls/cnn_accel.cpp:82:14) in function 'conv2_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_30_1' (mnist_fpga_cnn/hls/cnn_accel.cpp:30:35) in function 'conv1_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'conv1_loop' (mnist_fpga_cnn/hls/cnn_accel.cpp:29:14) in function 'conv1_layer'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_58_1' (mnist_fpga_cnn/hls/cnn_accel.cpp:58:35) in function 'cnn_accel'.
+INFO: [XFORM 203-541] Flattening a loop nest 'pool1_loop' (mnist_fpga_cnn/hls/cnn_accel.cpp:57:14) in function 'cnn_accel'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_112_1' (mnist_fpga_cnn/hls/cnn_accel.cpp:112:36) in function 'cnn_accel'.
+INFO: [XFORM 203-541] Flattening a loop nest 'pool2_loop' (mnist_fpga_cnn/hls/cnn_accel.cpp:111:14) in function 'cnn_accel'.
+WARNING: [HLS 200-960] Cannot flatten loop 'fc2_loop' (mnist_fpga_cnn/hls/cnn_accel.cpp:158:14) in function 'cnn_accel' the outer loop is not a perfect loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'cnn_accel(ap_int<8> const*, ap_uint<4>&)conv2' (mnist_fpga_cnn/hls/cnn_accel.cpp:100:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'cnn_accel(ap_int<8> const*, ap_uint<4>&)conv1' (mnist_fpga_cnn/hls/cnn_accel.cpp:46:33)
+INFO: [HLS 200-472] Inferring partial write operation for '_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0' (mnist_fpga_cnn/hls/cnn_accel.cpp:68:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'cnn_accel(ap_int<8> const*, ap_uint<4>&)pool2' (mnist_fpga_cnn/hls/cnn_accel.cpp:122:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'logits.V' (mnist_fpga_cnn/hls/cnn_accel.cpp:164:19)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 15.078 seconds; current allocated memory: 272.309 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'cnn_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv1_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_78) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_79) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_80) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_81) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_82) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_83) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_84) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_85) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'conv1_loop_VITIS_LOOP_30_1_VITIS_LOOP_31_2'.
+WARNING: [HLS 200-885] The II Violation in module 'conv1_layer' (loop 'conv1_loop_VITIS_LOOP_30_1_VITIS_LOOP_31_2'): Unable to schedule bus request operation ('pix_V_1_req', mnist_fpga_cnn/hls/cnn_accel.cpp:41) on port 'gmem' (mnist_fpga_cnn/hls/cnn_accel.cpp:41) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'conv1_layer' (loop 'conv1_loop_VITIS_LOOP_30_1_VITIS_LOOP_31_2'): Unable to schedule bus request operation ('pix_V_2_req', mnist_fpga_cnn/hls/cnn_accel.cpp:41) on port 'gmem' (mnist_fpga_cnn/hls/cnn_accel.cpp:41) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'conv1_layer' (loop 'conv1_loop_VITIS_LOOP_30_1_VITIS_LOOP_31_2'): Unable to schedule bus request operation ('pix_V_3_req', mnist_fpga_cnn/hls/cnn_accel.cpp:41) on port 'gmem' (mnist_fpga_cnn/hls/cnn_accel.cpp:41) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'conv1_layer' (loop 'conv1_loop_VITIS_LOOP_30_1_VITIS_LOOP_31_2'): Unable to schedule bus request operation ('pix_V_4_req', mnist_fpga_cnn/hls/cnn_accel.cpp:41) on port 'gmem' (mnist_fpga_cnn/hls/cnn_accel.cpp:41) due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'conv1_layer' (loop 'conv1_loop_VITIS_LOOP_30_1_VITIS_LOOP_31_2'): Unable to schedule bus request operation ('pix_V_7_req', mnist_fpga_cnn/hls/cnn_accel.cpp:41) on port 'gmem' (mnist_fpga_cnn/hls/cnn_accel.cpp:41) due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'conv1_layer' (loop 'conv1_loop_VITIS_LOOP_30_1_VITIS_LOOP_31_2'): Unable to schedule bus request operation ('pix_V_8_req', mnist_fpga_cnn/hls/cnn_accel.cpp:41) on port 'gmem' (mnist_fpga_cnn/hls/cnn_accel.cpp:41) due to limited memory ports (II = 8). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 9, Depth = 28, loop 'conv1_loop_VITIS_LOOP_30_1_VITIS_LOOP_31_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.426 seconds; current allocated memory: 282.082 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.547 seconds; current allocated memory: 283.309 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cnn_accel_Pipeline_pool1_loop_VITIS_LOOP_58_1_VITIS_LOOP_59_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'pool1_loop_VITIS_LOOP_58_1_VITIS_LOOP_59_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'pool1_loop_VITIS_LOOP_58_1_VITIS_LOOP_59_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.685 seconds; current allocated memory: 283.633 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.265 seconds; current allocated memory: 283.879 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_77) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_76) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_75) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_74) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_73) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_72) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_71) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_70) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_69) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_68) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_67) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_66) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_65) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_64) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_63) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_62) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_61) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_60) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_59) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_58) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_57) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_56) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_55) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_54) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_53) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_52) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_51) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_50) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_49) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_48) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_47) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_46) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_45) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_44) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_43) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_41) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_40) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_39) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_38) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_37) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_36) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_35) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_34) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_33) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_32) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_31) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_30) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_29) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_28) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_27) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_26) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_25) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_24) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_23) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_22) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_21) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_20) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_19) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_18) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_17) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_16) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_15) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_14) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_13) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_12) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_11) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_10) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_9) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_8) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_7) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'conv2_loop_VITIS_LOOP_83_1_VITIS_LOOP_84_2'.
+WARNING: [HLS 200-885] The II Violation in module 'conv2_layer' (loop 'conv2_loop_VITIS_LOOP_83_1_VITIS_LOOP_84_2'): Unable to schedule 'load' operation ('p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0_load_9', mnist_fpga_cnn/hls/cnn_accel.cpp:95) on array 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0'.
+WARNING: [HLS 200-885] The II Violation in module 'conv2_layer' (loop 'conv2_loop_VITIS_LOOP_83_1_VITIS_LOOP_84_2'): Unable to schedule 'load' operation ('p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0_load_27', mnist_fpga_cnn/hls/cnn_accel.cpp:95) on array 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0'.
+WARNING: [HLS 200-885] The II Violation in module 'conv2_layer' (loop 'conv2_loop_VITIS_LOOP_83_1_VITIS_LOOP_84_2'): Unable to schedule 'load' operation ('p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0_load_45', mnist_fpga_cnn/hls/cnn_accel.cpp:95) on array 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 92, loop 'conv2_loop_VITIS_LOOP_83_1_VITIS_LOOP_84_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 14.257 seconds; current allocated memory: 321.430 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.722 seconds; current allocated memory: 321.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cnn_accel_Pipeline_pool2_loop_VITIS_LOOP_112_1_VITIS_LOOP_113_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'pool2_loop_VITIS_LOOP_112_1_VITIS_LOOP_113_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'pool2_loop_VITIS_LOOP_112_1_VITIS_LOOP_113_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.771 seconds; current allocated memory: 321.430 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.225 seconds; current allocated memory: 321.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fc1_layer_Pipeline_VITIS_LOOP_139_1_VITIS_LOOP_140_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_6) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_4) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln139) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_139_1_VITIS_LOOP_140_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 11, loop 'VITIS_LOOP_139_1_VITIS_LOOP_140_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.616 seconds; current allocated memory: 321.430 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.308 seconds; current allocated memory: 321.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fc1_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.461 seconds; current allocated memory: 321.430 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.224 seconds; current allocated memory: 321.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cnn_accel_Pipeline_VITIS_LOOP_160_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln840) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_160_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'VITIS_LOOP_160_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.408 seconds; current allocated memory: 321.430 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.159 seconds; current allocated memory: 321.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cnn_accel_Pipeline_argmax_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'argmax_loop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'argmax_loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.222 seconds; current allocated memory: 321.430 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.167 seconds; current allocated memory: 321.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cnn_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.332 seconds; current allocated memory: 321.430 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.764 seconds; current allocated memory: 321.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv1_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'conv1_layer' pipeline 'conv1_loop_VITIS_LOOP_30_1_VITIS_LOOP_31_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_7ns_14s_16_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_16ns_16_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_16s_17_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_17s_17_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_17s_18_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_18s_18_4_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_16ns_47_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv1_layer'.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv1_layer_B_CONV1_V_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv1_layer_p_ZL7W_CONV1_1_1_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv1_layer_p_ZL7W_CONV1_0_0_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv1_layer_p_ZL7W_CONV1_0_1_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv1_layer_p_ZL7W_CONV1_0_2_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv1_layer_p_ZL7W_CONV1_1_0_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv1_layer_p_ZL7W_CONV1_1_2_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv1_layer_p_ZL7W_CONV1_2_0_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv1_layer_p_ZL7W_CONV1_2_1_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv1_layer_p_ZL7W_CONV1_2_2_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.24 seconds; current allocated memory: 321.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cnn_accel_Pipeline_pool1_loop_VITIS_LOOP_58_1_VITIS_LOOP_59_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cnn_accel_Pipeline_pool1_loop_VITIS_LOOP_58_1_VITIS_LOOP_59_2' pipeline 'pool1_loop_VITIS_LOOP_58_1_VITIS_LOOP_59_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_4ns_6ns_9_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_4ns_3ns_2_8_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn_accel_Pipeline_pool1_loop_VITIS_LOOP_58_1_VITIS_LOOP_59_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.324 seconds; current allocated memory: 321.430 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'conv2_layer' pipeline 'conv2_loop_VITIS_LOOP_83_1_VITIS_LOOP_84_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'conv2_layer' is 8403 from HDL expression: ((1'b1 == ap_CS_fsm_pp0_stage2) & (1'b0 == ap_block_pp0_stage2_11001))
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_7s_12s_15_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_7s_15ns_15_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_7s_19s_19_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_7s_20s_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_15s_16_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_16s_17_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_17s_17_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_17s_18_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_18s_18_4_1': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_18s_19_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_19s_19_4_1': 10 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_19s_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_20s_20_4_1': 21 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_20s_21_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_21s_21_4_1': 23 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_16ns_47_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_4ns_6ns_9_1_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_66ns_129_5_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_32_8_1_1': 72 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_4ns_3ns_2_8_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2_layer'.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_B_CONV2_V_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 5.24 seconds; current allocated memory: 345.012 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cnn_accel_Pipeline_pool2_loop_VITIS_LOOP_112_1_VITIS_LOOP_113_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cnn_accel_Pipeline_pool2_loop_VITIS_LOOP_112_1_VITIS_LOOP_113_2' pipeline 'pool2_loop_VITIS_LOOP_112_1_VITIS_LOOP_113_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn_accel_Pipeline_pool2_loop_VITIS_LOOP_112_1_VITIS_LOOP_113_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 2 seconds. Elapsed time: 11.321 seconds; current allocated memory: 386.578 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fc1_layer_Pipeline_VITIS_LOOP_139_1_VITIS_LOOP_140_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fc1_layer_Pipeline_VITIS_LOOP_139_1_VITIS_LOOP_140_2' pipeline 'VITIS_LOOP_139_1_VITIS_LOOP_140_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_5ns_6ns_7s_11_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_16s_17_4_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_17s_17_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_8s_16_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_42_8_1_1': 7 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fc1_layer_Pipeline_VITIS_LOOP_139_1_VITIS_LOOP_140_2'.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_fc1_layer_Pipeline_VITIS_LOOP_139_1_VITIS_LOOP_140_2_p_ZL5W_FC1_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_fc1_layer_Pipeline_VITIS_LOOP_139_1_VITIS_LOOP_140_2_p_ZL5W_FC1_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_fc1_layer_Pipeline_VITIS_LOOP_139_1_VITIS_LOOP_140_2_p_ZL5W_FC1_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_fc1_layer_Pipeline_VITIS_LOOP_139_1_VITIS_LOOP_140_2_p_ZL5W_FC1_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.054 seconds; current allocated memory: 386.578 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fc1_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_16ns_47_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fc1_layer'.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_fc1_layer_B_FC1_V_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.225 seconds; current allocated memory: 387.402 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cnn_accel_Pipeline_VITIS_LOOP_160_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cnn_accel_Pipeline_VITIS_LOOP_160_1' pipeline 'VITIS_LOOP_160_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_20s_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_325_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn_accel_Pipeline_VITIS_LOOP_160_1'.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_160_1_W_FC2_V_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.724 seconds; current allocated memory: 391.535 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cnn_accel_Pipeline_argmax_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cnn_accel_Pipeline_argmax_loop' pipeline 'argmax_loop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn_accel_Pipeline_argmax_loop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.361 seconds; current allocated memory: 394.008 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cnn_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn_accel/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn_accel/image_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'cnn_accel/label_r' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'cnn_accel' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'cnn_accel_ap_int_8_const_ap_uint_4_fc1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'cnn_accel_ap_int_8_const_ap_uint_4_fc1_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'cnn_accel_ap_int_8_const_ap_uint_4_fc1_7' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'cnn_accel_ap_int_8_const_ap_uint_4_fc1_8' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'cnn_accel_ap_int_8_const_ap_uint_4_fc1_9' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'cnn_accel_ap_int_8_const_ap_uint_4_fc1_10' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'cnn_accel_ap_int_8_const_ap_uint_4_fc1_11' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'cnn_accel_ap_int_8_const_ap_uint_4_fc1_12' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'cnn_accel_ap_int_8_const_ap_uint_4_fc1_13' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'cnn_accel_ap_int_8_const_ap_uint_4_fc1_14' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_10' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_11' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_12' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_13' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_14' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_15' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_16' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_17' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_18' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_19' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_20' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_21' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_22' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_23' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_24' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_25' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_26' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_27' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_28' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_29' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_30' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE3fc1_31' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'image_r', 'label_r' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_16ns_47_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn_accel'.
+INFO: [RTMG 210-278] Implementing memory 'cnn_accel_cnn_accel_ap_int_8_const_ap_uint_4_conv1_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_accel_p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_accel_cnn_accel_ap_int_8_const_ap_uint_4_conv2_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_accel_cnn_accel_ap_int_8_const_ap_uint_4_pool2_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_accel_cnn_accel_ap_int_8_const_ap_uint_4_pool2_5_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-279] Implementing memory 'cnn_accel_B_FC2_V_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'cnn_accel_logits_V_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.856 seconds; current allocated memory: 395.645 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 13.027 seconds; current allocated memory: 402.094 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.761 seconds; current allocated memory: 415.211 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for cnn_accel.
+INFO: [VLOG 209-307] Generating Verilog RTL for cnn_accel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 18 seconds. CPU system time: 5 seconds. Elapsed time: 125.285 seconds; current allocated memory: 309.969 MB.
+INFO: [HLS 200-112] Total CPU user time: 18 seconds. Total CPU system time: 5 seconds. Total elapsed time: 137.961 seconds; peak allocated memory: 416.441 MB.
