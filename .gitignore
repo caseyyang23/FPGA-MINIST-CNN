@@ -7,13 +7,19 @@ software/data/
 .git_broken_empty/
 
 # HLS generated intermediate databases and build outputs.
-# Keep csim logs, synthesis reports, and synthesized Verilog for report evidence.
+# Keep csim logs and report files for report evidence.
 report/hls_baseline/solution*/.autopilot/
 report/hls_baseline/solution*/.debug/
 report/hls_baseline/solution*/.tcls/
 report/hls_baseline/solution*/csim/build/
-report/hls_baseline/solution*/impl/
+report/hls_baseline/solution*/sim/*
+!report/hls_baseline/solution*/sim/report/
+!report/hls_baseline/solution*/sim/report/**
+report/hls_baseline/solution*/impl/*
+!report/hls_baseline/solution*/impl/report/
+!report/hls_baseline/solution*/impl/report/**
 report/hls_baseline/solution*/syn/vhdl/
+report/hls_baseline/solution*/syn/verilog/
 
 # Native build outputs
 *.exe

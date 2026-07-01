@@ -1,0 +1,714 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "R:/Xlinx/Vitis_HLS/2022.2/tps/win64/msys64/mingw64/bin/g++"
+   Compiling cnn_accel.cpp_pre.cpp.tb.cpp
+   Compiling apatb_cnn_accel.cpp
+   Compiling tb_cnn.cpp_pre.cpp.tb.cpp
+   Compiling apatb_cnn_accel_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+INFO: [COSIM-333] Generating C post check test bench ...
+INFO: [COSIM-12] Generating RTL test bench ...
+INFO: [COSIM-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM-323] Starting verilog simulation. 
+INFO: [COSIM-15] Starting XSIM ...
+INFO: [COSIM-316] Starting C post checking ...
+image 0 conv1 PASS
+image 0 pool1 PASS
+image 0 conv2 PASS
+image 0 pool2 PASS
+image 0 fc1 PASS
+image 0 fc2_logits PASS
+image 0 top pred=7 golden_pred=7 label=7 quant_match=PASS label_match=PASS
+image 1 conv1 PASS
+image 1 pool1 PASS
+image 1 conv2 PASS
+image 1 pool2 PASS
+image 1 fc1 PASS
+image 1 fc2_logits PASS
+image 1 top pred=2 golden_pred=2 label=2 quant_match=PASS label_match=PASS
+image 2 conv1 PASS
+image 2 pool1 PASS
+image 2 conv2 PASS
+image 2 pool2 PASS
+image 2 fc1 PASS
+image 2 fc2_logits PASS
+image 2 top pred=1 golden_pred=1 label=1 quant_match=PASS label_match=PASS
+image 3 conv1 PASS
+image 3 pool1 PASS
+image 3 conv2 PASS
+image 3 pool2 PASS
+image 3 fc1 PASS
+image 3 fc2_logits PASS
+image 3 top pred=0 golden_pred=0 label=0 quant_match=PASS label_match=PASS
+image 4 conv1 PASS
+image 4 pool1 PASS
+image 4 conv2 PASS
+image 4 pool2 PASS
+image 4 fc1 PASS
+image 4 fc2_logits PASS
+image 4 top pred=4 golden_pred=4 label=4 quant_match=PASS label_match=PASS
+image 5 conv1 PASS
+image 5 pool1 PASS
+image 5 conv2 PASS
+image 5 pool2 PASS
+image 5 fc1 PASS
+image 5 fc2_logits PASS
+image 5 top pred=1 golden_pred=1 label=1 quant_match=PASS label_match=PASS
+image 6 conv1 PASS
+image 6 pool1 PASS
+image 6 conv2 PASS
+image 6 pool2 PASS
+image 6 fc1 PASS
+image 6 fc2_logits PASS
+image 6 top pred=4 golden_pred=4 label=4 quant_match=PASS label_match=PASS
+image 7 conv1 PASS
+image 7 pool1 PASS
+image 7 conv2 PASS
+image 7 pool2 PASS
+image 7 fc1 PASS
+image 7 fc2_logits PASS
+image 7 top pred=9 golden_pred=9 label=9 quant_match=PASS label_match=PASS
+image 8 conv1 PASS
+image 8 pool1 PASS
+image 8 conv2 PASS
+image 8 pool2 PASS
+image 8 fc1 PASS
+image 8 fc2_logits PASS
+image 8 top pred=5 golden_pred=5 label=5 quant_match=PASS label_match=PASS
+image 9 conv1 PASS
+image 9 pool1 PASS
+image 9 conv2 PASS
+image 9 pool2 PASS
+image 9 fc1 PASS
+image 9 fc2_logits PASS
+image 9 top pred=9 golden_pred=9 label=9 quant_match=PASS label_match=PASS
+layer matched 10 / 10
+matched quantized model 10 / 10
+matched true labels 10 / 10
+
+F:\fpga\vitis\hls_minst_cnn\solution3\sim\verilog>set PATH= 
+
+F:\fpga\vitis\hls_minst_cnn\solution3\sim\verilog>call R:/Xlinx/Vivado/2022.2/bin/xelab xil_defaultlib.apatb_cnn_accel_top glbl -Oenable_linking_all_libraries  -prj cnn_accel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm  -L floating_point_v7_0_20 -L floating_point_v7_1_15 --lib "ieee_proposed=./ieee_proposed" -s cnn_accel  
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: R:/Xlinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_cnn_accel_top glbl -Oenable_linking_all_libraries -prj cnn_accel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_20 -L floating_point_v7_1_15 --lib ieee_proposed=./ieee_proposed -s cnn_accel 
+Multi-threading is on. Using 14 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/AESL_axi_master_gmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_gmem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/AESL_axi_slave_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_cnn_accel_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_B_FC2_V_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_B_FC2_V_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_cnn_accel_ap_int_8_const_ap_uint_4_conv1_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_cnn_accel_ap_int_8_const_ap_uint_4_conv1_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_cnn_accel_ap_int_8_const_ap_uint_4_conv2_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_cnn_accel_ap_int_8_const_ap_uint_4_conv2_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_cnn_accel_ap_int_8_const_ap_uint_4_pool2_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_cnn_accel_ap_int_8_const_ap_uint_4_pool2_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_cnn_accel_Pipeline_argmax_loop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_cnn_accel_Pipeline_argmax_loop
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_cnn_accel_Pipeline_pool1_loop_VITIS_LOOP_70_1_VITIS_LOOP_71_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_cnn_accel_Pipeline_pool1_loop_VITIS_LOOP_70_1_VITIS_LOOP_71_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_cnn_accel_Pipeline_pool2_loop_VITIS_LOOP_124_1_VITIS_LOOP_125_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_cnn_accel_Pipeline_pool2_loop_VITIS_LOOP_124_1_VITIS_LOOP_125_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_172_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_172_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_172_1_W_FC2_V_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_cnn_accel_Pipeline_VITIS_LOOP_172_1_W_FC2_V_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_B_CONV1_V_ROMbkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_B_CONV1_V_ROMbkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_cud.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_cud
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_dEe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_dEe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_eOg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_eOg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_fYi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_fYi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_g8j.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_g8j
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_hbi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_hbi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_ibs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_ibs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_jbC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_jbC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_kbM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_conv1_loop_VITIS_LOOP_42_2_VITIS_LOOP_43_3_p_ZL7W_CONV1_kbM
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv1_layer_Pipeline_load_image_loop_VITIS_LOOP_34_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv1_layer_Pipeline_load_image_loop_VITIS_LOOP_34_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_B_CONV2_V_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_B_CONV2_V_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_0_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_0_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_1_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_1_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_2_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_2_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_3_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_3_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_4_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_4_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_5_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_5_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_6_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_6_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_7_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_0_7_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_0_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_0_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_1_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_1_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_2_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_2_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_3_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_3_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_4_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_4_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_5_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_5_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_6_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_6_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_7_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_1_7_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_0_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_0_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_1_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_1_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_2_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_2_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_3_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_3_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_4_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_4_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_5_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_5_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_6_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_6_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_7_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_0_2_7_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_0_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_0_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_1_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_1_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_2_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_2_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_3_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_3_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_4_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_4_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_5_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_5_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_6_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_6_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_7_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_0_7_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_0_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_0_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_1_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_1_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_2_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_2_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_3_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_3_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_4_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_4_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_5_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_5_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_6_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_6_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_7_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_1_7_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_0_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_0_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_1_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_1_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_2_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_2_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_3_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_3_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_4_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_4_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_5_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_5_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_6_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_6_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_7_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_1_2_7_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_0_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_0_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_1_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_1_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_2_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_2_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_3_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_3_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_4_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_4_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_5_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_5_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_6_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_6_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_7_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_0_7_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_0_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_0_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_1_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_1_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_2_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_2_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_3_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_3_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_4_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_4_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_5_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_5_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_6_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_6_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_7_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_1_7_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_0_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_0_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_1_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_1_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_2_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_2_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_3_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_3_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_4_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_4_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_5_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_5_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_6_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_6_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_7_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_conv2_layer_p_ZL7W_CONV2_2_2_7_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_fc1_layer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_fc1_layer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_fc1_layer_B_FC1_V_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_fc1_layer_B_FC1_V_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_fc1_layer_Pipeline_VITIS_LOOP_151_1_VITIS_LOOP_152_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_fc1_layer_Pipeline_VITIS_LOOP_151_1_VITIS_LOOP_152_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_fc1_layer_Pipeline_VITIS_LOOP_151_1_VITIS_LOOP_152_2_p_ZL5W_FC1_0_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_fc1_layer_Pipeline_VITIS_LOOP_151_1_VITIS_LOOP_152_2_p_ZL5W_FC1_0_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_fc1_layer_Pipeline_VITIS_LOOP_151_1_VITIS_LOOP_152_2_p_ZL5W_FC1_1_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_fc1_layer_Pipeline_VITIS_LOOP_151_1_VITIS_LOOP_152_2_p_ZL5W_FC1_1_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_gmem_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_gmem_m_axi
+INFO: [VRFC 10-311] analyzing module cnn_accel_gmem_m_axi_load
+INFO: [VRFC 10-311] analyzing module cnn_accel_gmem_m_axi_store
+INFO: [VRFC 10-311] analyzing module cnn_accel_gmem_m_axi_read
+INFO: [VRFC 10-311] analyzing module cnn_accel_gmem_m_axi_write
+INFO: [VRFC 10-311] analyzing module cnn_accel_gmem_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module cnn_accel_gmem_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module cnn_accel_gmem_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module cnn_accel_gmem_m_axi_srl
+INFO: [VRFC 10-311] analyzing module cnn_accel_gmem_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_logits_V_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_logits_V_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_5ns_6ns_7s_11_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_5ns_6ns_7s_11_4_1_DSP48_17
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_5ns_6ns_7s_11_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_7ns_14s_16_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_7ns_14s_16_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_7ns_14s_16_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_7s_12s_15_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_7s_12s_15_4_1_DSP48_6
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_7s_12s_15_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_7s_15ns_15_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_7s_15ns_15_4_1_DSP48_7
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_7s_15ns_15_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_7s_19s_19_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_7s_19s_19_4_1_DSP48_11
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_7s_19s_19_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_7s_20s_20_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_7s_20s_20_4_1_DSP48_14
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_7s_20s_20_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_15s_16_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_15s_16_4_1_DSP48_8
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_15s_16_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_16ns_16_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_16ns_16_4_1_DSP48_1
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_16ns_16_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_16s_17_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_16s_17_4_1_DSP48_2
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_16s_17_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_17s_17_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_17s_17_4_1_DSP48_3
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_17s_17_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_17s_18_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_17s_18_4_1_DSP48_4
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_17s_18_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_18s_18_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_18s_18_4_1_DSP48_5
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_18s_18_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_18s_19_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_18s_19_4_1_DSP48_9
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_18s_19_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_19s_19_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_19s_19_4_1_DSP48_10
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_19s_19_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_19s_20_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_19s_20_4_1_DSP48_12
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_19s_20_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_20s_20_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_20s_20_4_1_DSP48_13
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_20s_20_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_20s_21_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_20s_21_4_1_DSP48_15
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_20s_21_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mac_muladd_8s_8s_21s_21_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_21s_21_4_1_DSP48_16
+INFO: [VRFC 10-311] analyzing module cnn_accel_mac_muladd_8s_8s_21s_21_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mul_32ns_16ns_47_2_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mul_32ns_16ns_47_2_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mul_4ns_6ns_9_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mul_4ns_6ns_9_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mul_64ns_66ns_129_5_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mul_64ns_66ns_129_5_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mul_8s_8s_16_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mul_8s_8s_16_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mux_21_8_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mux_21_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mux_275_8_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mux_275_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mux_285_8_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mux_285_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mux_325_8_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mux_325_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_mux_32_8_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_mux_32_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_p_ZZ9cnn_accelPK6ap_intILi8EER7ap_uintILi4EEE5pool1_0_0_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel_urem_4ns_3ns_2_8_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn_accel_urem_4ns_3ns_2_8_1_divider
+INFO: [VRFC 10-311] analyzing module cnn_accel_urem_4ns_3ns_2_8_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.cnn_accel_cnn_accel_ap_int_8_con...
+Compiling module xil_defaultlib.cnn_accel_p_ZZ9cnn_accelPK6ap_in...
+Compiling module xil_defaultlib.cnn_accel_cnn_accel_ap_int_8_con...
+Compiling module xil_defaultlib.cnn_accel_cnn_accel_ap_int_8_con...
+Compiling module xil_defaultlib.cnn_accel_B_FC2_V_ROM_AUTO_1R
+Compiling module xil_defaultlib.cnn_accel_logits_V_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.cnn_accel_flow_control_loop_pipe...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_l...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_c...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_c...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_c...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_c...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_c...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_c...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_c...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_c...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_c...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_c...
+Compiling module xil_defaultlib.cnn_accel_mux_285_8_1_1(ID=1,din...
+Compiling module xil_defaultlib.cnn_accel_mux_275_8_1_1(ID=1,din...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_7ns_14s_...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_7ns_14s_...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_16ns_...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_16ns_...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_16s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_16s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_17s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_17s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_17s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_17s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_18s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_18s_1...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer_Pipeline_c...
+Compiling module xil_defaultlib.cnn_accel_conv1_layer
+Compiling module xil_defaultlib.cnn_accel_urem_4ns_3ns_2_8_1_div...
+Compiling module xil_defaultlib.cnn_accel_urem_4ns_3ns_2_8_1(NUM...
+Compiling module xil_defaultlib.cnn_accel_mul_4ns_6ns_9_1_1(NUM_...
+Compiling module xil_defaultlib.cnn_accel_cnn_accel_Pipeline_poo...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_B_CONV2_V_...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer_p_ZL7W_CON...
+Compiling module xil_defaultlib.cnn_accel_mux_32_8_1_1(ID=1,din0...
+Compiling module xil_defaultlib.cnn_accel_mul_64ns_66ns_129_5_1(...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_7s_12s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_7s_12s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_7s_15ns_...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_7s_15ns_...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_15s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_15s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_18s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_18s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_19s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_19s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_7s_19s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_7s_19s_1...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_19s_2...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_19s_2...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_20s_2...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_20s_2...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_7s_20s_2...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_7s_20s_2...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_20s_2...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_20s_2...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_21s_2...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_8s_8s_21s_2...
+Compiling module xil_defaultlib.cnn_accel_conv2_layer
+Compiling module xil_defaultlib.cnn_accel_cnn_accel_Pipeline_poo...
+Compiling module xil_defaultlib.cnn_accel_fc1_layer_B_FC1_V_ROM_...
+Compiling module xil_defaultlib.cnn_accel_fc1_layer_Pipeline_VIT...
+Compiling module xil_defaultlib.cnn_accel_fc1_layer_Pipeline_VIT...
+Compiling module xil_defaultlib.cnn_accel_mux_21_8_1_1(ID=1,din0...
+Compiling module xil_defaultlib.cnn_accel_mul_8s_8s_16_1_1(NUM_S...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_5ns_6ns_7s_...
+Compiling module xil_defaultlib.cnn_accel_mac_muladd_5ns_6ns_7s_...
+Compiling module xil_defaultlib.cnn_accel_fc1_layer_Pipeline_VIT...
+Compiling module xil_defaultlib.cnn_accel_fc1_layer
+Compiling module xil_defaultlib.cnn_accel_cnn_accel_Pipeline_VIT...
+Compiling module xil_defaultlib.cnn_accel_mux_325_8_1_1(ID=1,din...
+Compiling module xil_defaultlib.cnn_accel_cnn_accel_Pipeline_VIT...
+Compiling module xil_defaultlib.cnn_accel_cnn_accel_Pipeline_arg...
+Compiling module xil_defaultlib.cnn_accel_control_s_axi
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_srl(DATA_WI...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_fifo(DATA_W...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_mem(MEM_STY...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_fifo(MEM_ST...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_srl(DATA_WI...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_fifo(DATA_W...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_srl(DATA_WI...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_fifo(DATA_W...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_srl(DATA_WI...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_fifo(DATA_W...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_store(NUM_W...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_mem(MEM_STY...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_fifo(MEM_ST...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_srl(DATA_WI...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_fifo(DATA_W...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_load(NUM_RE...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_reg_slice(D...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_srl(DATA_WI...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_fifo(DATA_W...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_reg_slice(D...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_srl(DATA_WI...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_fifo(DATA_W...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_srl(DATA_WI...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_fifo(DATA_W...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_throttle(CO...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_reg_slice(D...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_write(CONSE...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_reg_slice(D...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi_read(C_USER...
+Compiling module xil_defaultlib.cnn_accel_gmem_m_axi(CONSERVATIV...
+Compiling module xil_defaultlib.cnn_accel_mul_32ns_16ns_47_2_1(N...
+Compiling module xil_defaultlib.cnn_accel
+Compiling module xil_defaultlib.AESL_axi_master_gmem
+Compiling module xil_defaultlib.AESL_axi_slave_control
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=20)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=7)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=4)
+Compiling module xil_defaultlib.upc_loop_intf
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_cnn_accel_top
+Compiling module work.glbl
+Built simulation snapshot cnn_accel
+
+****** xsim v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/cnn_accel/xsim_script.tcl
+# xsim {cnn_accel} -autoloadwcfg -tclbatch {cnn_accel.tcl}
+Time resolution is 1 ps
+source cnn_accel.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 10 [0.00%] @ "125000"
+// RTL Simulation : 1 / 10 [0.04%] @ "301725000"
+// RTL Simulation : 2 / 10 [0.04%] @ "603235000"
+// RTL Simulation : 3 / 10 [0.04%] @ "904745000"
+// RTL Simulation : 4 / 10 [0.04%] @ "1206255000"
+// RTL Simulation : 5 / 10 [0.04%] @ "1507765000"
+// RTL Simulation : 6 / 10 [0.04%] @ "1809275000"
+// RTL Simulation : 7 / 10 [0.04%] @ "2110785000"
+// RTL Simulation : 8 / 10 [0.04%] @ "2412295000"
+// RTL Simulation : 9 / 10 [0.04%] @ "2713805000"
+// RTL Simulation : 10 / 10 [100.00%] @ "3015315000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 3015375 ns : File "F:/fpga/vitis/hls_minst_cnn/solution3/sim/verilog/cnn_accel.autotb.v" Line 428
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:38 . Memory (MB): peak = 239.535 ; gain = 0.000
+## quit
+INFO: xsimkernel Simulation Memory Usage: 25864 KB (Peak: 25864 KB), Simulation CPU Usage: 28625 ms
+INFO: [Common 17-206] Exiting xsim at Thu Jul  2 02:04:46 2026...
+image 0 conv1 PASS
+image 0 pool1 PASS
+image 0 conv2 PASS
+image 0 pool2 PASS
+image 0 fc1 PASS
+image 0 fc2_logits PASS
+image 0 top pred=7 golden_pred=7 label=7 quant_match=PASS label_match=PASS
+image 1 conv1 PASS
+image 1 pool1 PASS
+image 1 conv2 PASS
+image 1 pool2 PASS
+image 1 fc1 PASS
+image 1 fc2_logits PASS
+image 1 top pred=2 golden_pred=2 label=2 quant_match=PASS label_match=PASS
+image 2 conv1 PASS
+image 2 pool1 PASS
+image 2 conv2 PASS
+image 2 pool2 PASS
+image 2 fc1 PASS
+image 2 fc2_logits PASS
+image 2 top pred=1 golden_pred=1 label=1 quant_match=PASS label_match=PASS
+image 3 conv1 PASS
+image 3 pool1 PASS
+image 3 conv2 PASS
+image 3 pool2 PASS
+image 3 fc1 PASS
+image 3 fc2_logits PASS
+image 3 top pred=0 golden_pred=0 label=0 quant_match=PASS label_match=PASS
+image 4 conv1 PASS
+image 4 pool1 PASS
+image 4 conv2 PASS
+image 4 pool2 PASS
+image 4 fc1 PASS
+image 4 fc2_logits PASS
+image 4 top pred=4 golden_pred=4 label=4 quant_match=PASS label_match=PASS
+image 5 conv1 PASS
+image 5 pool1 PASS
+image 5 conv2 PASS
+image 5 pool2 PASS
+image 5 fc1 PASS
+image 5 fc2_logits PASS
+image 5 top pred=1 golden_pred=1 label=1 quant_match=PASS label_match=PASS
+image 6 conv1 PASS
+image 6 pool1 PASS
+image 6 conv2 PASS
+image 6 pool2 PASS
+image 6 fc1 PASS
+image 6 fc2_logits PASS
+image 6 top pred=4 golden_pred=4 label=4 quant_match=PASS label_match=PASS
+image 7 conv1 PASS
+image 7 pool1 PASS
+image 7 conv2 PASS
+image 7 pool2 PASS
+image 7 fc1 PASS
+image 7 fc2_logits PASS
+image 7 top pred=9 golden_pred=9 label=9 quant_match=PASS label_match=PASS
+image 8 conv1 PASS
+image 8 pool1 PASS
+image 8 conv2 PASS
+image 8 pool2 PASS
+image 8 fc1 PASS
+image 8 fc2_logits PASS
+image 8 top pred=5 golden_pred=5 label=5 quant_match=PASS label_match=PASS
+image 9 conv1 PASS
+image 9 pool1 PASS
+image 9 conv2 PASS
+image 9 pool2 PASS
+image 9 fc1 PASS
+image 9 fc2_logits PASS
+image 9 top pred=9 golden_pred=9 label=9 quant_match=PASS label_match=PASS
+layer matched 10 / 10
+matched quantized model 10 / 10
+matched true labels 10 / 10
+INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
