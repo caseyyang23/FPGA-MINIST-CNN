@@ -25,18 +25,6 @@ void conv1_layer(
 #pragma HLS ARRAY_PARTITION variable=W_CONV1 complete dim=3
 #pragma HLS ARRAY_PARTITION variable=W_CONV1 complete dim=4
 
-    static qint8_t image_buf[IMG_H][IMG_W];
-#pragma HLS ARRAY_PARTITION variable=image_buf complete dim=1
-#pragma HLS ARRAY_PARTITION variable=image_buf complete dim=2
-
-load_image_loop:
-    for (int y = 0; y < IMG_H; ++y) {
-        for (int x = 0; x < IMG_W; ++x) {
-#pragma HLS PIPELINE II=1
-            image_buf[y][x] = image[y * IMG_W + x];
-        }
-    }
-
 conv1_loop:
     for (int oc = 0; oc < C1_OUT; ++oc) {
         for (int y = 0; y < IMG_H; ++y) {
@@ -50,7 +38,7 @@ conv1_loop:
                         int iy = y + ky - 1;
                         int ix = x + kx - 1;
                         if (iy >= 0 && iy < IMG_H && ix >= 0 && ix < IMG_W) {
-                            qint8_t pix = image_buf[iy][ix];
+                            qint8_t pix = image[iy * IMG_W + ix];
                             acc += (qint32_t)pix * W_CONV1[oc][0][ky][kx];
                         }
                     }
@@ -142,8 +130,8 @@ void fc1_layer(
     qint8_t fc1[FC1_OUT]
 ) {
 #pragma HLS ARRAY_PARTITION variable=fc1 complete dim=1
-#pragma HLS ARRAY_PARTITION variable=pool2 cyclic factor=2 dim=3
-#pragma HLS ARRAY_PARTITION variable=W_FC1 cyclic factor=2 dim=2
+#pragma HLS ARRAY_PARTITION variable=pool2 cyclic factor=4 dim=3
+#pragma HLS ARRAY_PARTITION variable=W_FC1 cyclic factor=4 dim=2
 
 fc1_loop:
     for (int o = 0; o < FC1_OUT; ++o) {
@@ -152,7 +140,7 @@ fc1_loop:
             for (int y = 0; y < P2_H; ++y) {
 #pragma HLS PIPELINE II=1
                 for (int x = 0; x < P2_W; ++x) {
-#pragma HLS UNROLL factor=2
+#pragma HLS UNROLL factor=4
                     int idx = c * P2_H * P2_W + y * P2_W + x;
                     acc += (qint32_t)pool2[c][y][x] * W_FC1[o][idx];
                 }
