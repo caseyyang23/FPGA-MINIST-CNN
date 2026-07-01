@@ -1,0 +1,36 @@
+{
+  "float32_accuracy": 0.9849,
+  "int8_accuracy": 0.9847,
+  "checkpoint": "F:\\fpga\\vitis\\mnist_fpga_cnn\\software\\checkpoints\\mnist_cnn_fp32.pt",
+  "hls_data_dir": "F:\\fpga\\vitis\\mnist_fpga_cnn\\hls\\data",
+  "num_test": 10,
+  "calib_batches": 20,
+  "params": {
+    "input_scale": 0.007874015748031496,
+    "weight_scales": {
+      "conv1": 0.006285391923949475,
+      "conv2": 0.004337026847629096,
+      "fc1": 0.0045013516906678205,
+      "fc2": 0.004407943233730286
+    },
+    "activation_scales": {
+      "conv1_relu": 0.02788328373526025,
+      "conv2_relu": 0.10908676507904774,
+      "fc1_relu": 0.3405605526421014
+    },
+    "requant": {
+      "conv1": {
+        "mult": 29779,
+        "shift": 24
+      },
+      "conv2": {
+        "mult": 18599,
+        "shift": 24
+      },
+      "fc1": {
+        "mult": 24190,
+        "shift": 24
+      }
+    }
+  }
+}

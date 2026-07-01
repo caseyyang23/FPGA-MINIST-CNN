@@ -1,0 +1,20 @@
+# Python cache and local datasets
+__pycache__/
+*.py[cod]
+software/data/
+
+# Broken placeholder from the previous invalid git directory
+.git_broken_empty/
+
+# HLS generated intermediate databases and build outputs
+report/hls_baseline/solution1/.autopilot/
+report/hls_baseline/solution1/.debug/
+report/hls_baseline/solution1/.tcls/
+report/hls_baseline/solution1/csim/build/
+report/hls_baseline/solution1/impl/
+report/hls_baseline/solution1/syn/vhdl/
+
+# Native build outputs
+*.exe
+*.o
+*.obj
