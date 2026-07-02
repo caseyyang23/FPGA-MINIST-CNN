@@ -8,7 +8,7 @@
 
 ## 0. 当前总体结论
 
-目前工程已经完成了软件训练、8 位定点量化、HLS 加速器设计、C Simulation 逐层验证、solution1 baseline 综合、solution2 优化综合、solution3 进一步优化综合、solution3 C/RTL 协同仿真，以及 solution3 Vivado 后端 implementation。
+目前工程已经完成了软件训练、8 位定点量化、HLS 加速器设计、C Simulation 逐层验证、solution1 baseline 综合、solution2 优化综合、solution3 进一步优化综合、solution3 C/RTL 协同仿真、solution3 HLS IP implementation、Vivado Block Design 完整系统 implementation，以及包含 bitstream 的 XSA 导出。
 
 已达到的核心要求：
 
@@ -21,13 +21,14 @@
 - solution2 相比 solution1 latency 从 354430 cycles 降到 76031 cycles，加速约 4.66 倍。
 - solution3 相比 solution1 latency 从 354430 cycles 降到 30203 cycles，加速约 11.74 倍；相比 solution2 继续加速约 2.52 倍。
 - solution3 RTL cosim 使用 Vivado XSIM 验证 Verilog RTL，状态为 Pass，平均 latency 为 30161 cycles。
-- solution3 Vivado implementation timing met，post-implementation clock period 为 9.884 ns，WNS=0.116 ns。
+- solution3 HLS IP implementation timing met，post-implementation clock period 为 9.884 ns，WNS=0.116 ns。
+- Vivado Block Design 完整系统 implementation timing met，系统时钟 50 MHz，WNS=1.339 ns，并已导出包含 bitstream 的 XSA：`vivado/vivado_minst_cnn/system_with_bitstream.xsa`。
 
 还需要补充的核心内容：
 
 - Word 报告正式排版。
 - 架构图、仿真波形/日志截图、综合报告截图。
-- 队友负责的 FPGA 板端系统集成、bitstream、板端测试或演示截图。
+- 仍建议补充 FPGA 板端下载、Vitis 软件端驱动、板端测试或演示截图。
 
 ---
 
@@ -152,14 +153,15 @@ TODO：
 | @100MHz 单张延迟 | 已完成 | solution1 约 3.544 ms，solution2 约 0.760 ms，solution3 约 0.302 ms |
 | @100MHz 吞吐量 | 已完成 | solution1 约 282 images/s，solution2 约 1315 images/s，solution3 C Synthesis 约 3311 images/s，solution3 RTL cosim 约 3316 images/s |
 | 资源利用率 | 已完成 | solution1/solution2/solution3 已有 BRAM/DSP/FF/LUT |
-| Vivado implementation | 已完成 | LUT 26.60%，FF 12.53%，DSP 59.09%，BRAM 18.21%，WNS=0.116 ns |
+| HLS IP implementation | 已完成 | LUT 26.60%，FF 12.53%，DSP 59.09%，BRAM 18.21%，WNS=0.116 ns |
+| Vivado Block Design implementation/XSA | 已完成 | Slice LUTs 27.65%，Slice Registers 13.19%，DSP 59.09%，BRAM Tile 18.21%，WNS=1.339 ns，已导出 `system_with_bitstream.xsa` |
 | 权重存储需求 | 已计算 | 约 26.7 KB，如果权重 int8、bias int32 |
 | 特征图存储需求 | 已计算 | 约 22.7 KB，如果主要中间特征图 int8，logits int32 |
 | solution3 性能 | 已完成 | C Simulation PASS，C Synthesis latency 30203 cycles |
 
 TODO：
 
-- 队友补充 FPGA 板端系统集成、bitstream 或上板测试结果。
+- 补充 FPGA 板端下载、Vitis 软件端驱动或上板测试结果。
 - 如果队友使用不同 FPGA 平台，需要补充器件型号、时钟频率、资源总量。
 
 ### 5. 提交成果
@@ -181,7 +183,7 @@ TODO：
 | HLS 数据头文件 | 已完成 | `hls/data/*.h` |
 | README | 已完成初稿 | `README.md` |
 | Word 报告 | 未完成 | 需要根据本 notes 整理 |
-| 架构图 | 未完成 | 需要绘图 |
+| 架构图源文件 | 已完成 | `report/figures/cnn_accel_architecture.mmd`，Word 中仍需渲染/截图插入 |
 | 仿真波形/截图 | 未完成 | 需要从 Vitis/Vivado 截图 |
 | 队友上板部分 | 未完成 | 预留章节 |
 
@@ -460,18 +462,19 @@ solution3 进一步进行了 C/RTL cosimulation，仿真工具为 Vivado XSIM，
 
 ### 6.3 HLS 综合与 Vivado Implementation 对比
 
-solution1 为 baseline，solution2 为 3x3 kernel 展开优化版，solution3 为输入片上 buffer + FC1 资源权衡版。前三行资源来自 HLS C Synthesis；最后一行来自 Vivado 后端 implementation，因此最后一行更接近真实 FPGA 布局布线后的资源与时序。
+solution1 为 baseline，solution2 为 3x3 kernel 展开优化版，solution3 为输入片上 buffer + FC1 资源权衡版。前三行资源来自 HLS C Synthesis；HLS IP implementation 行来自 Vitis HLS 导出的 IP 后端实现；Vivado Block Design system 行来自完整 Vivado 工程，因此更接近集成后的 FPGA 布局布线资源与时序。
 
 | Version | Main optimization | Latency/cycles | Latency/ms @100MHz | Throughput/images/s | Timing | LUT | FF | DSP | BRAM |
 | --- | --- | ---: | ---: | ---: | --- | ---: | ---: | ---: | ---: |
 | solution1 | baseline | 354430 | 3.544 | 282 | met | 14% | 4% | 7% | 9% |
 | solution2 | 3x3 kernel unroll / partition | 76031 | 0.760 | 1315 | met | 41.4% | 18.5% | 52.7% | 30% |
 | solution3 | final optimized HLS | 30203 | 0.302 | 3311 | met | 61.4% | 24.1% | 52.7% | 17.9% |
-| solution3 implementation | Vivado backend implementation + RTL cosim | 30161 RTL cosim avg | 0.302 | 3316 | met, WNS=0.116 ns | 26.6% | 12.5% | 59.1% | 18.2% |
+| solution3 HLS IP implementation | HLS exported IP backend + RTL cosim | 30161 RTL cosim avg | 0.302 | 3316 | met, WNS=0.116 ns | 26.6% | 12.5% | 59.1% | 18.2% |
+| Vivado Block Design system | Zynq PS + AXI interconnect + cnn_accel IP | 30161 RTL cosim avg | 0.603 @50MHz | 1658 @50MHz | met, WNS=1.339 ns | 27.65% | 13.19% | 59.09% | 18.21% |
 
-注：solution1、solution2、solution3 三行的 latency 和资源来自 HLS C Synthesis 报告；`solution3 implementation` 行的 latency 来自 C/RTL cosimulation 平均值，资源和 WNS 来自 Vivado 后端 implementation。两类报告的资源估计方法不同，因此 implementation 行资源数值与 HLS C Synthesis 行不完全一致。
+注：solution1、solution2、solution3 三行的 latency 和资源来自 HLS C Synthesis 报告；`solution3 HLS IP implementation` 行的 latency 来自 C/RTL cosimulation 平均值，资源和 WNS 来自 Vitis HLS 导出 IP 的后端 implementation；`Vivado Block Design system` 行的资源和 WNS 来自完整 Vivado 工程 `system_wrapper` 的 placed/routed 报告。几类报告统计阶段和统计范围不同，因此资源数值不完全一致。
 
-Vivado implementation 关键结果：
+HLS IP implementation 关键结果：
 
 | 项目 | 结果 |
 | --- | ---: |
@@ -482,6 +485,20 @@ Vivado implementation 关键结果：
 | Post-implementation clock period | 9.884 ns |
 | WNS | 0.116 ns |
 | Timing | met |
+
+Vivado Block Design 完整系统 implementation 关键结果：
+
+| 项目 | 结果 |
+| --- | ---: |
+| Slice LUTs | 14708 / 53200，27.65% |
+| Slice Registers | 14037 / 106400，13.19% |
+| DSP | 130 / 220，59.09% |
+| BRAM Tile | 25.5 / 140，18.21% |
+| 系统时钟 | `clk_fpga_0`，20 ns，50 MHz |
+| WNS | 1.339 ns |
+| WHS | 0.024 ns |
+| Timing | met |
+| XSA | `vivado/vivado_minst_cnn/system_with_bitstream.xsa`，约 900 KiB |
 
 资源利用率：
 
@@ -504,7 +521,7 @@ Vivado implementation 关键结果：
 | FC2 | 410 | 410 | 410 | 基本不变 |
 | Argmax | 12 | 12 | 12 | 占比很小 |
 
-结论：solution2 通过对卷积核计算循环展开，将 3x3 MAC 从顺序计算改为并行乘加阵列，显著降低了 Conv2 延迟，并使整体 latency 从 354430 cycles 降到 76031 cycles。solution3 进一步将输入图像搬入完全分块的片上 `image_buf`，解决 Conv1 并行读端口瓶颈，使整体 latency 降到 30203 cycles。Vivado 后端 implementation 显示 timing met，WNS 为 0.116 ns，说明当前最终 HLS 版本不仅在 HLS 估计阶段可行，在后端布局布线后也满足 100 MHz 时序。
+结论：solution2 通过对卷积核计算循环展开，将 3x3 MAC 从顺序计算改为并行乘加阵列，显著降低了 Conv2 延迟，并使整体 latency 从 354430 cycles 降到 76031 cycles。solution3 进一步将输入图像搬入完全分块的片上 `image_buf`，解决 Conv1 并行读端口瓶颈，使整体 latency 降到 30203 cycles。HLS IP implementation 显示 timing met，WNS 为 0.116 ns，说明加速器 IP 满足 100 MHz 目标；Vivado Block Design 完整系统 implementation 也 timing met，系统时钟为 50 MHz，WNS 为 1.339 ns，并已导出 XSA。
 
 ### 6.4 三轮优化路径总结
 
@@ -516,12 +533,12 @@ Vivado implementation 关键结果：
 | solution2 | 展开 Conv1/Conv2 的 3x3 kernel 维度，FC1 factor=4 | Conv2 从 269696 降到 12632 cycles，整体加速 4.66x |
 | solution3 | Conv1 增加 `image_buf[28][28]` 且 complete partition，FC1 factor=2 | Conv1 从 56467 降到 7086 cycles，整体加速到 11.74x |
 
-需要注意的是，solution3 的 `Interval` 仍接近 `Latency`，说明当前架构仍是一张图处理完再处理下一张图，还没有形成多图层间流水。Vivado backend implementation 已经通过时序检查，WNS=0.116 ns；后续队友进行板端系统集成和上板测试时，需要重点关注数据搬运、bitstream 下载、板端输入输出验证以及 DSP 使用率较高带来的平台余量问题。
+需要注意的是，solution3 的 `Interval` 仍接近 `Latency`，说明当前架构仍是一张图处理完再处理下一张图，还没有形成多图层间流水。HLS IP implementation 和 Vivado Block Design system implementation 均已通过时序检查；后续上板测试时，需要重点关注 Vitis 软件端驱动、数据搬运、板端输入输出验证以及 DSP 使用率较高带来的平台余量问题。
 
 TODO：
 
-- Word 报告中补架构图、C Simulation 截图和综合报告截图。
-- 队友补板端系统集成、bitstream 下载、板端测试截图和板端输入输出验证结果。
+- Word 报告中插入架构图、C Simulation 截图和综合报告截图。
+- 补板端下载、Vitis 软件端驱动、板端测试截图和板端输入输出验证结果。
 - 最终报告中明确区分 HLS C Synthesis 结果和 Vivado implementation 结果。
 
 ---
@@ -535,7 +552,7 @@ TODO：
 - 题目背景：CNN 在图像识别中计算量大，FPGA 适合进行并行乘加和定点加速。
 - 实验目标：设计轻量 CNN，训练 MNIST，量化为 int8，并使用 HLS 实现 FPGA 加速器。
 - 当前方案优势：模型小、准确率达标、量化精度损失小、HLS 逐层验证完整，solution3 相比 baseline 加速约 11.74x。
-- 当前方案不足：层间尚未做多图流水，Interval 接近 Latency；solution3 implementation 的 DSP 使用率约 59.09%，继续大规模并行化的余量有限；板端系统集成和上板测试结果待队友补充。
+- 当前方案不足：层间尚未做多图流水，Interval 接近 Latency；HLS IP 和 Vivado 系统的 DSP 使用率约 59.09%，继续大规模并行化的余量有限；板端下载、Vitis 软件端驱动和上板测试结果仍需补充。
 
 TODO：
 
@@ -583,7 +600,7 @@ TODO：
 
 TODO：
 
-- 画架构图。
+- 将 `report/figures/cnn_accel_architecture.mmd` 渲染或截图后插入 Word。
 - 画数据流图或状态流程图。
 - 队友补 FPGA 平台整体系统图，例如 PS/PL 或外设接口。
 
@@ -637,7 +654,7 @@ TODO：
 
 ## 8. 队友预留部分
 
-以下内容主要由负责 FPGA 板端系统集成和上板验证的队友补充。Vivado 后端 implementation 已经有一版结果，可直接写入报告；板卡信息和实际板端测试仍需补充。
+以下内容主要用于补充 FPGA 板端系统集成和上板验证。当前 Vivado Block Design implementation 和包含 bitstream 的 XSA 已经完成，可直接写入报告；板卡信息、Vitis 软件端驱动和实际板端测试仍需补充。
 
 ### 8.1 FPGA 平台信息
 
@@ -654,24 +671,29 @@ TODO：
 
 | 指标 | 结果 |
 | --- | ---: |
-| LUT | 14151 / 53200，26.60% |
-| FF | 13335 / 106400，12.53% |
+| HLS IP LUT | 14151 / 53200，26.60% |
+| HLS IP FF | 13335 / 106400，12.53% |
 | DSP | 130 / 220，59.09% |
 | BRAM | 51 / 280，18.21% |
-| Post-implementation clock period | 9.884 ns |
-| WNS | 0.116 ns |
-| Timing | met |
+| HLS IP post-implementation clock period | 9.884 ns |
+| HLS IP WNS | 0.116 ns |
+| Vivado system Slice LUTs | 14708 / 53200，27.65% |
+| Vivado system Slice Registers | 14037 / 106400，13.19% |
+| Vivado system clock | 20 ns，50 MHz |
+| Vivado system WNS | 1.339 ns |
+| Vivado system Timing | met |
+| XSA | `vivado/vivado_minst_cnn/system_with_bitstream.xsa` |
 
 TODO：
 
-- 如果队友在完整 Vivado 工程中重新集成 IP，需要确认完整系统 implementation 资源和 WNS 是否与 HLS export implementation 一致。
-- 若完整系统包含 PS、AXI interconnect、DMA 或 BRAM 控制器，应另列完整系统资源。
+- 在 Word 报告中补 Vivado Block Design 截图、implementation summary 截图和 XSA 导出截图。
+- 若后续修改 PS 时钟或 AXI 连接，需要重新确认完整系统 implementation 资源和 WNS。
 
 ### 8.3 上板测试结果
 
 TODO：
 
-- bitstream 是否生成成功：
+- bitstream/XSA 是否生成成功：已生成 `system_with_bitstream.xsa`
 - 板端是否能启动：
 - 输入测试图像数量：
 - 板端预测结果：
@@ -695,7 +717,7 @@ TODO：
 - HLS IP 集成方式。
 - AXI 接口连接方式。
 - 时钟和复位设计。
-- bitstream 生成结果。
+- XSA/bitstream 生成结果。
 - 上板测试流程。
 - 板端测试截图。
 - 与 HLS C Synthesis、RTL cosim、Vivado implementation 结果的差异分析。
@@ -716,12 +738,15 @@ TODO：
 - [x] solution3 C Simulation。
 - [x] solution3 C Synthesis。
 - [x] solution3 C/RTL cosimulation，Verilog Pass。
-- [x] solution3 Vivado backend implementation，timing met，WNS=0.116 ns。
+- [x] solution3 HLS IP implementation，timing met，WNS=0.116 ns。
+- [x] Vivado Block Design system implementation，timing met，WNS=1.339 ns。
+- [x] XSA with bitstream 导出。
 - [x] 确定当前 HLS synthesis 最优版本为 solution3。
 - [ ] Word 报告排版。
-- [ ] 架构图。
+- [x] 架构图源文件。
+- [ ] Word 中插入架构图。
 - [ ] 仿真截图。
 - [ ] 综合报告截图。
-- [ ] 队友补 FPGA 板端系统集成/上板结果。
+- [ ] 补 FPGA 板端下载/Vitis 软件端驱动/上板结果。
 - [ ] 最终 GitHub 代码检查。
 - [ ] 最终提交压缩包或仓库链接。

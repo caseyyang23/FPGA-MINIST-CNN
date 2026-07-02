@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 software/data/
+.env
 
 # Broken placeholder from the previous invalid git directory
 .git_broken_empty/

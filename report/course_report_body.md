@@ -16,7 +16,7 @@
 | solution2 | 优化最大瓶颈 Conv2 | 对 3x3 kernel 维度展开，形成 3x3 乘加阵列 |
 | solution3 | 继续优化 Conv1 并保留资源分析 | 输入图像搬入片上 buffer，改善 Conv1 读端口限制；FC1 展开因子从 4 调整为 2 |
 
-从 HLS C Synthesis 结果看，solution1 的单张图像延迟为 354430 cycles；solution2 降到 76031 cycles；solution3 进一步降到 30203 cycles。三轮优化清楚体现了“先保证正确，再定位瓶颈，再通过 HLS pragma 改善并行度和片上数据访问”的设计过程。在 solution3 的 C/RTL 协同仿真中，HLS 生成的 Verilog RTL 通过 XSIM 验证，平均 latency 为 30161 cycles；Vivado 后端 implementation 结果显示 timing met，WNS 为 0.116 ns，说明最终版本不仅在 HLS 估算层面可行，在后端布局布线后也满足 100 MHz 时序。
+从 HLS C Synthesis 结果看，solution1 的单张图像延迟为 354430 cycles；solution2 降到 76031 cycles；solution3 进一步降到 30203 cycles。三轮优化清楚体现了“先保证正确，再定位瓶颈，再通过 HLS pragma 改善并行度和片上数据访问”的设计过程。在 solution3 的 C/RTL 协同仿真中，HLS 生成的 Verilog RTL 通过 XSIM 验证，平均 latency 为 30161 cycles。HLS IP 独立后端 implementation 结果显示 timing met，WNS 为 0.116 ns，满足 10 ns 时钟目标；进一步集成到 Vivado Block Design 后，系统 implementation 也已完成，并导出了包含 bitstream 的 XSA 文件。
 
 ## 2. 文献综述
 
@@ -155,9 +155,9 @@ image
 
 ### 4.3 平台及语言
 
-软件训练使用 Python、PyTorch 和 conda 环境 `ML`。硬件设计使用 Vitis HLS 2022.2，目标器件为 `xc7z020-clg400-1`，目标时钟周期为 10 ns，即 100 MHz。HLS C++ 综合后生成 Verilog RTL。
+软件训练使用 Python、PyTorch 和 conda 环境 `ML`。硬件设计使用 Vitis HLS 2022.2，目标器件为 `xc7z020-clg400-1`。HLS IP 的目标时钟周期为 10 ns，即 100 MHz；集成后的 Vivado Block Design 使用 `clk_fpga_0` 系统时钟，约束周期为 20 ns，即 50 MHz。HLS C++ 综合后生成 Verilog RTL，并在 Vivado 中封装为 AXI IP 接入 Zynq PS 系统。
 
-本文的 HLS C Synthesis、C/RTL cosimulation 和 Vivado backend implementation 数据已经完成。需要注意的是，前三轮 solution 的资源表主要来自 HLS C Synthesis 估计，而 implementation 结果来自 Vivado 后端综合和布局布线，更接近真实 FPGA。FPGA 板端系统集成、bitstream 下载和板端测试由队友负责，后续 Word 报告中应继续补充板卡信息、完整系统资源、板端运行截图和测试结果。
+本文的 HLS C Synthesis、C/RTL cosimulation、HLS IP implementation、Vivado Block Design implementation 和 XSA 导出均已完成。需要注意的是，前三轮 solution 的资源表主要来自 HLS C Synthesis 估计；HLS IP implementation 结果来自 Vitis HLS 导出的 IP 后端实现；Vivado Block Design implementation 结果来自完整系统综合、布局和布线。后续 Word 报告中仍建议补充 Vivado 截图、板卡信息、板端运行截图和测试结果。
 
 ## 5. 关键电路设计
 
@@ -278,15 +278,16 @@ solution3 的 C/RTL cosimulation 结果如下：
 | solution1 | baseline | 354430 | 3.544 | 282 | met | 14% | 4% | 7% | 9% |
 | solution2 | 3x3 kernel unroll / partition | 76031 | 0.760 | 1315 | met | 41.4% | 18.5% | 52.7% | 30% |
 | solution3 | final optimized HLS | 30203 | 0.302 | 3311 | met | 61.4% | 24.1% | 52.7% | 17.9% |
-| solution3 implementation | Vivado backend implementation | 30161 RTL cosim avg | 0.302 | 3316 | met, WNS=0.116 ns | 26.6% | 12.5% | 59.1% | 18.2% |
+| solution3 HLS IP implementation | HLS exported IP backend | 30161 RTL cosim avg | 0.302 | 3316 | met, WNS=0.116 ns | 26.6% | 12.5% | 59.1% | 18.2% |
+| Vivado Block Design system | Zynq PS + AXI interconnect + cnn_accel IP | 30161 RTL cosim avg | 0.603 @50MHz | 1658 @50MHz | met, WNS=1.339 ns | 27.65% | 13.19% | 59.09% | 18.21% |
 
-注：solution1、solution2 和 solution3 三行的资源占比来自 HLS C Synthesis 报告；`solution3 implementation` 行的 latency 来自 RTL cosim 平均值，资源和 WNS 来自 Vivado 后端 implementation。HLS C Synthesis 是高层综合阶段估算，Vivado implementation 则经过后端综合、布局和布线，因此更接近真实 FPGA 结果。
+注：solution1、solution2 和 solution3 三行的资源占比来自 HLS C Synthesis 报告；`solution3 HLS IP implementation` 行的 latency 来自 RTL cosim 平均值，资源和 WNS 来自 Vitis HLS 导出 IP 的后端 implementation；`Vivado Block Design system` 行的资源和 WNS 来自完整 Vivado 工程 `system_wrapper` 的 routed/placed 报告。Vivado 系统时钟为 50 MHz，因此该行延迟和吞吐量按 50 MHz 计算。
 
 solution2 的核心收益来自 Conv2：3x3 kernel 展开后，最大瓶颈从 269696 cycles 降到 12632 cycles。solution3 的核心收益来自 Conv1：输入图像先进入片上完全分块 buffer 后，Conv1 从 56467 cycles 降到 7086 cycles。最终 solution3 在 C Synthesis 下单张图像延迟为 0.302 ms，等效吞吐量约 3311 images/s；在 RTL cosim 下平均 latency 为 30161 cycles，等效吞吐量约 3316 images/s。
 
 ### 6.5 资源利用率对比
 
-目标器件为 `xc7z020-clg400-1`。资源利用率如下：
+目标器件为 `xc7z020-clg400-1`。三轮 HLS C Synthesis 资源利用率如下：
 
 | 资源 | solution1 | solution2 | solution3 |
 | --- | ---: | ---: | ---: |
@@ -295,9 +296,9 @@ solution2 的核心收益来自 Conv2：3x3 kernel 展开后，最大瓶颈从 2
 | FF | 5274 / 106400，4% | 19695 / 106400，18% | 25626 / 106400，24% |
 | LUT | 7505 / 53200，14% | 22045 / 53200，41% | 32671 / 53200，61% |
 
-资源变化反映了三轮优化的取舍。solution2 增加大量 DSP 和 BRAM，用并行乘加换取 Conv2 加速。solution3 保持 DSP 数量不变，但由于 `image_buf` complete partition 和更复杂的本地读数据通路，HLS 估计中的 LUT 和 FF 上升；同时 FC1 展开因子从 4 降到 2，使 BRAM 从 84 降到 50。总体看，solution3 性能最好，但 HLS C Synthesis 中 LUT 估计已达到 61%，说明继续增加并行度需要谨慎；在 Vivado implementation 中，最终 LUT 占比为 26.60%，DSP 占比为 59.09%，后续更需要关注 DSP 余量和完整系统集成后的时序。
+资源变化反映了三轮优化的取舍。solution2 增加大量 DSP 和 BRAM，用并行乘加换取 Conv2 加速。solution3 保持 DSP 数量不变，但由于 `image_buf` complete partition 和更复杂的本地读数据通路，HLS 估计中的 LUT 和 FF 上升；同时 FC1 展开因子从 4 降到 2，使 BRAM 从 84 降到 50。总体看，solution3 性能最好，但 HLS C Synthesis 中 LUT 估计已达到 61%，说明继续增加并行度需要谨慎；在 HLS IP implementation 中，最终 LUT 占比为 26.60%，DSP 占比为 59.09%。完整 Vivado 系统集成后，Slice LUT 占比为 27.65%，Slice Register 占比为 13.19%，DSP 占比仍为 59.09%，后续更需要关注 DSP 余量和完整系统上板后的数据搬运开销。
 
-Vivado 后端 implementation 结果如下：
+Vitis HLS 导出 IP 的后端 implementation 结果如下：
 
 | 资源/时序 | 结果 |
 | --- | ---: |
@@ -309,7 +310,21 @@ Vivado 后端 implementation 结果如下：
 | WNS | 0.116 ns |
 | Timing | met |
 
-可以看到，Vivado implementation 的 LUT/FF 占比低于 HLS C Synthesis 估计，而 DSP 占比略高。原因是 HLS C Synthesis 与 Vivado 后端报告的统计阶段不同，后端优化会对逻辑、寄存器和存储结构进行重新映射。报告中应明确区分这两类数据来源。
+Vivado Block Design 完整系统 implementation 结果如下：
+
+| 资源/时序 | 结果 |
+| --- | ---: |
+| Slice LUTs | 14708 / 53200，27.65% |
+| Slice Registers | 14037 / 106400，13.19% |
+| DSP | 130 / 220，59.09% |
+| BRAM Tile | 25.5 / 140，18.21% |
+| 系统时钟 | `clk_fpga_0`，20 ns，50 MHz |
+| WNS | 1.339 ns |
+| WHS | 0.024 ns |
+| Timing | met |
+| XSA | `vivado/vivado_minst_cnn/system_with_bitstream.xsa`，约 900 KiB |
+
+可以看到，HLS C Synthesis、HLS IP implementation 和 Vivado Block Design implementation 的资源数字不完全相同。原因是三者统计阶段和统计范围不同：HLS C Synthesis 是高层估计；HLS IP implementation 只关注导出的加速器 IP；Vivado Block Design implementation 还包含 Zynq PS、AXI interconnect、reset/clock 等系统集成逻辑。报告中应明确区分这几类数据来源。
 
 ### 6.6 主要模块延迟对比
 
@@ -351,7 +366,7 @@ Vivado 后端 implementation 结果如下：
 
 1. `Interval` 仍接近 `Latency`。这说明当前架构仍是“一张图处理完再处理下一张图”，不是多张图层间 dataflow 流水。
 2. solution3 在 HLS C Synthesis 中的 LUT 估计达到 61%，Vivado implementation 中 DSP 使用率为 59.09%。后续若继续展开输入通道或增加并行度，可能导致 DSP、LUT 或布线压力过高。
-3. 当前已有 Vivado backend implementation 结果，但完整板端系统集成、bitstream 下载和上板测试仍需补充。
+3. 当前已经完成 Vivado Block Design implementation 和包含 bitstream 的 XSA 导出，但板端下载、Vitis 软件端驱动和实际上板输入输出截图仍需补充。
 4. 当前 testbench 使用 10 张图像，满足课程最低要求；若时间允许，可以增加更多测试样本提高验证覆盖面。
 
 后续改进可以从两个方向进行。若目标是进一步降低 latency，可以尝试层间 dataflow、双缓冲和更细粒度输入通道并行；若目标是降低资源，可以回退部分 array partition 或降低展开因子，形成资源友好版。考虑到 solution3 已经达到 11.74 倍加速，后续更适合围绕“性能-资源权衡”和“实际上板可实现性”继续完善。
@@ -368,14 +383,16 @@ Vivado 后端 implementation 结果如下：
 
 性能优化方面，solution1 作为 baseline，延迟为 354430 cycles。solution2 对 3x3 kernel 进行展开，将 Conv2 延迟从 269696 cycles 降到 12632 cycles，整体延迟降到 76031 cycles。solution3 在 Conv1 中加入片上输入 buffer，将 Conv1 延迟从 56467 cycles 降到 7086 cycles，整体延迟进一步降到 30203 cycles。相对于 baseline，solution3 在 HLS C Synthesis 下加速约 11.74 倍，@100MHz 等效吞吐量约 3311 images/s。RTL cosim 的平均 latency 为 30161 cycles，等效吞吐量约 3316 images/s。
 
-Vivado backend implementation 结果显示，solution3 使用 LUT 26.60%、FF 12.53%、DSP 59.09%、BRAM 18.21%，post-implementation clock period 为 9.884 ns，WNS 为 0.116 ns，timing met。这说明最终 HLS 版本通过了后端布局布线时序检查。下一步工作主要包括：补充 Word 报告中的架构图、仿真截图和综合报告截图；由队友完成板端系统集成、bitstream 下载和板端测试；若继续优化，可研究 dataflow pipeline、双缓冲、更系统的资源约束和自动化 pragma 搜索。
+HLS IP implementation 结果显示，solution3 使用 LUT 26.60%、FF 12.53%、DSP 59.09%、BRAM 18.21%，post-implementation clock period 为 9.884 ns，WNS 为 0.116 ns，timing met。Vivado Block Design 完整系统 implementation 结果显示，系统使用 Slice LUTs 27.65%、Slice Registers 13.19%、DSP 59.09%、BRAM Tile 18.21%，在 50 MHz 系统时钟下 WNS 为 1.339 ns，timing met，并已导出 `system_with_bitstream.xsa`。这说明最终 HLS 版本和集成系统均通过了后端布局布线时序检查。下一步工作主要包括：补充 Word 报告中的架构图、仿真截图和综合报告截图；补充板端下载、Vitis 软件端驱动和板端测试截图；若继续优化，可研究 dataflow pipeline、双缓冲、更系统的资源约束和自动化 pragma 搜索。
 
-## 参考文献 TODO
+## 参考文献
 
-正式 Word 报告中建议补充以下方向的参考文献：
+正式 Word 报告中可选用以下参考文献，并按学校模板调整格式：
 
-1. hls4ml 及其 CNN/RNN/Transformer FPGA 部署工作。
-2. FINN 或类似量化神经网络 FPGA 数据流框架。
-3. Vitis AI / DPU 在 Zynq 或 Zynq UltraScale+ 上的 CNN 部署案例。
-4. 近年 int8/混合精度 CNN FPGA 加速器论文。
-5. HLS 中 array partition、loop unroll、pipeline、dataflow 对 FPGA CNN 性能影响的相关研究。
+1. Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner, "Gradient-Based Learning Applied to Document Recognition," Proceedings of the IEEE, 1998.
+2. M. Courbariaux, Y. Bengio, and J.-P. David, "BinaryConnect: Training Deep Neural Networks with binary weights during propagations," NeurIPS, 2015.
+3. Y. Umuroglu et al., "FINN: A Framework for Fast, Scalable Binarized Neural Network Inference," FPGA, 2017.
+4. J. Duarte et al., "Fast inference of deep neural networks in FPGAs for particle physics," Journal of Instrumentation, 2018.
+5. B. Jacob et al., "Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference," CVPR, 2018.
+6. Xilinx, "Vitis High-Level Synthesis User Guide," UG1399.
+7. AMD/Xilinx, "Vitis AI User Guide."

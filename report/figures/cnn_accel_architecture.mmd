@@ -1,0 +1,29 @@
+flowchart LR
+    host["Zynq PS / Vitis software"] --> axi_ctrl["AXI-Lite control\nstart / done / label"]
+    host --> axi_mem["AXI master image read\n784 x int8 pixels"]
+
+    axi_ctrl --> top["cnn_accel top\nap_ctrl_hs FSM"]
+    axi_mem --> ibuf["input image_buf\n28 x 28 int8"]
+
+    top --> conv1["Conv1 engine\n3x3 MAC + bias\n1 to 8 channels"]
+    ibuf --> conv1
+    conv1 --> relu1["ReLU + requant\nint32 to int8"]
+    relu1 --> pool1["MaxPool1\n2x2 stride 2"]
+    pool1 --> buf1["pool1 buffer\n8 x 14 x 14"]
+
+    buf1 --> conv2["Conv2 engine\n3x3 MAC array\n8 to 16 channels"]
+    conv2 --> relu2["ReLU + requant\nint32 to int8"]
+    relu2 --> pool2["MaxPool2\n2x2 stride 2"]
+    pool2 --> buf2["pool2 buffer\n16 x 7 x 7"]
+
+    buf2 --> fc1["FC1 engine\n784 to 32"]
+    fc1 --> relu3["ReLU + requant\nint32 to int8"]
+    relu3 --> fc2["FC2 engine\n32 to 10 logits"]
+    fc2 --> argmax["Argmax"]
+    argmax --> label["label register\n0 to 9"]
+    label --> axi_ctrl
+
+    weights["On-chip ROMs\nint8 weights + int32 bias"] --> conv1
+    weights --> conv2
+    weights --> fc1
+    weights --> fc2
